@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IRenderedFragment
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -201,7 +201,7 @@ on the HTML markup from the rendered fragment/component.</p>
   </span>
   <a id="Bunit_IRenderedFragment_RenderEvents_" data-uid="Bunit.IRenderedFragment.RenderEvents*"></a>
   <h4 id="Bunit_IRenderedFragment_RenderEvents" data-uid="Bunit.IRenderedFragment.RenderEvents">RenderEvents</h4>
-  <div class="markdown level1 summary"><p>Gets an <see cref="!:IObservable&lt;RenderEvent>"></see> which will provide subscribers with <a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>s
+  <div class="markdown level1 summary"><p>Gets an <span class="xref">System.IObservable&lt;T&gt;</span> which will provide subscribers with <a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>s
 whenever the <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a> is rendered.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -219,7 +219,7 @@ whenever the <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragme
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IObservable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
+        <td><span class="xref">System.IObservable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -351,7 +351,7 @@ this <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>.<
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent</a>&lt;TComponent&gt;&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent</a>&lt;TComponent&gt;&gt;</td>
         <td><p>The <a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent&lt;TComponent&gt;</a>s</p>
 </td>
       </tr>
@@ -401,7 +401,7 @@ or component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">IDiff</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">IDiff</span>&gt;</td>
         <td><p>A list of differences found.</p>
 </td>
       </tr>
@@ -435,7 +435,7 @@ with the current rendering of the fragment or component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">IDiff</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">IDiff</span>&gt;</td>
         <td><p>A list of differences found.</p>
 </td>
       </tr>
@@ -467,10 +467,10 @@ the snapshot and the rendered markup at that time.</p>
       <a class="xref" href="Bunit.CompareToExtensions.html#Bunit_CompareToExtensions_CompareTo_Bunit_IRenderedFragment_Bunit_IRenderedFragment_">CompareToExtensions.CompareTo(IRenderedFragment, IRenderedFragment)</a>
   </div>
   <div>
-      <a class="xref" href="Bunit.MarkupMatchesAssertExtensions.html#Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_Nullable_System_String__">MarkupMatchesAssertExtensions.MarkupMatches(IRenderedFragment, String, Nullable&lt;String&gt;)</a>
+      <a class="xref" href="Bunit.MarkupMatchesAssertExtensions.html#Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_String_">MarkupMatchesAssertExtensions.MarkupMatches(IRenderedFragment, String, String)</a>
   </div>
   <div>
-      <a class="xref" href="Bunit.MarkupMatchesAssertExtensions.html#Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_Nullable_System_String__">MarkupMatchesAssertExtensions.MarkupMatches(IRenderedFragment, IRenderedFragment, Nullable&lt;String&gt;)</a>
+      <a class="xref" href="Bunit.MarkupMatchesAssertExtensions.html#Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_String_">MarkupMatchesAssertExtensions.MarkupMatches(IRenderedFragment, IRenderedFragment, String)</a>
   </div>
   <div>
       <a class="xref" href="Bunit.RenderedFragmentQueryExtensions.html#Bunit_RenderedFragmentQueryExtensions_Find_Bunit_IRenderedFragment_System_String_">RenderedFragmentQueryExtensions.Find(IRenderedFragment, String)</a>
@@ -479,10 +479,10 @@ the snapshot and the rendered markup at that time.</p>
       <a class="xref" href="Bunit.RenderedFragmentQueryExtensions.html#Bunit_RenderedFragmentQueryExtensions_FindAll_Bunit_IRenderedFragment_System_String_System_Boolean_">RenderedFragmentQueryExtensions.FindAll(IRenderedFragment, String, Boolean)</a>
   </div>
   <div>
-      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForState_Bunit_IRenderedFragment_Func_System_Boolean__System_Nullable_TimeSpan__">RenderWaitingHelperExtensions.WaitForState(IRenderedFragment, Func&lt;Boolean&gt;, Nullable&lt;TimeSpan&gt;)</a>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForState_Bunit_IRenderedFragment_System_Func_System_Boolean__System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForState(IRenderedFragment, Func&lt;Boolean&gt;, Nullable&lt;TimeSpan&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForAssertion_Bunit_IRenderedFragment_Action_System_Nullable_TimeSpan__">RenderWaitingHelperExtensions.WaitForAssertion(IRenderedFragment, Action, Nullable&lt;TimeSpan&gt;)</a>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForAssertion_Bunit_IRenderedFragment_System_Action_System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForAssertion(IRenderedFragment, Action, Nullable&lt;TimeSpan&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Bunit.Mocking.JSInterop.JsRuntimeAssertExtensions.html#Bunit_Mocking_JSInterop_JsRuntimeAssertExtensions_ShouldBeElementReferenceTo_System_Object_IElement_">JsRuntimeAssertExtensions.ShouldBeElementReferenceTo(Object, IElement)</a>

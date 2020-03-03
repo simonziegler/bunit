@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ConcurrentRenderEventSubscriber
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -97,6 +97,34 @@ the <a class="xref" href="Bunit.TestRenderer.html">TestRenderer</a>.</p>
     <div class="level1"><span class="xref">ConcurrentRenderEventSubscriber</span></div>
       <div class="level2"><a class="xref" href="Bunit.ComponentChangeEventSubscriber.html">ComponentChangeEventSubscriber</a></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IObserver</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
   <h5 id="Bunit_ConcurrentRenderEventSubscriber_syntax">Syntax</h5>
@@ -107,20 +135,20 @@ the <a class="xref" href="Bunit.TestRenderer.html">TestRenderer</a>.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ConcurrentRenderEventSubscriber__ctor_IObservable_Bunit_RenderEvent__System_Nullable_Action_Bunit_RenderEvent___System_Nullable_Action__.md&amp;value=---%0Auid%3A%20Bunit.ConcurrentRenderEventSubscriber.%23ctor(IObservable%7BBunit.RenderEvent%7D%2CSystem.Nullable%7BAction%7BBunit.RenderEvent%7D%7D%2CSystem.Nullable%7BAction%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ConcurrentRenderEventSubscriber__ctor_System_IObservable_Bunit_RenderEvent__System_Action_Bunit_RenderEvent__System_Action_.md&amp;value=---%0Auid%3A%20Bunit.ConcurrentRenderEventSubscriber.%23ctor(System.IObservable%7BBunit.RenderEvent%7D%2CSystem.Action%7BBunit.RenderEvent%7D%2CSystem.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Rendering/ConcurrentRenderEventSubscriber.cs/#L42">View Source</a>
   </span>
   <a id="Bunit_ConcurrentRenderEventSubscriber__ctor_" data-uid="Bunit.ConcurrentRenderEventSubscriber.#ctor*"></a>
-  <h4 id="Bunit_ConcurrentRenderEventSubscriber__ctor_IObservable_Bunit_RenderEvent__System_Nullable_Action_Bunit_RenderEvent___System_Nullable_Action__" data-uid="Bunit.ConcurrentRenderEventSubscriber.#ctor(IObservable{Bunit.RenderEvent},System.Nullable{Action{Bunit.RenderEvent}},System.Nullable{Action})">ConcurrentRenderEventSubscriber(IObservable&lt;RenderEvent&gt;, Nullable&lt;Action&lt;RenderEvent&gt;&gt;, Nullable&lt;Action&gt;)</h4>
+  <h4 id="Bunit_ConcurrentRenderEventSubscriber__ctor_System_IObservable_Bunit_RenderEvent__System_Action_Bunit_RenderEvent__System_Action_" data-uid="Bunit.ConcurrentRenderEventSubscriber.#ctor(System.IObservable{Bunit.RenderEvent},System.Action{Bunit.RenderEvent},System.Action)">ConcurrentRenderEventSubscriber(IObservable&lt;RenderEvent&gt;, Action&lt;RenderEvent&gt;, Action)</h4>
   <div class="markdown level1 summary"><p>Creates an instance of the <a class="xref" href="Bunit.ConcurrentRenderEventSubscriber.html">ConcurrentRenderEventSubscriber</a>, and
 subscribes to the provided <code data-dev-comment-type="paramref" class="paramref">observable</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ConcurrentRenderEventSubscriber(IObservable&lt;RenderEvent&gt; observable, Action&lt;RenderEvent&gt;? onRender = null, Action? onCompleted = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public ConcurrentRenderEventSubscriber(IObservable&lt;RenderEvent&gt; observable, Action&lt;RenderEvent&gt; onRender = null, Action onCompleted = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -133,19 +161,19 @@ subscribes to the provided <code data-dev-comment-type="paramref" class="paramre
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IObservable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
+        <td><span class="xref">System.IObservable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
         <td><span class="parametername">observable</span></td>
         <td><p>The observable to observe.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Action</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
         <td><span class="parametername">onRender</span></td>
         <td><p>A callback to invoke when a <a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a> is received.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Action</span>&gt;</td>
+        <td><span class="xref">System.Action</span></td>
         <td><span class="parametername">onCompleted</span></td>
         <td><p>A callback to invoke when no more renders will happen.</p>
 </td>
@@ -200,7 +228,7 @@ renders will happen.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RenderEvent? LatestRenderEvent { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public RenderEvent LatestRenderEvent { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -212,7 +240,7 @@ renders will happen.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
+        <td><a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -267,13 +295,13 @@ renders will happen.</p>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ConcurrentRenderEventSubscriber_OnError_Exception_.md&amp;value=---%0Auid%3A%20Bunit.ConcurrentRenderEventSubscriber.OnError(Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ConcurrentRenderEventSubscriber_OnError_System_Exception_.md&amp;value=---%0Auid%3A%20Bunit.ConcurrentRenderEventSubscriber.OnError(System.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Rendering/ConcurrentRenderEventSubscriber.cs/#L74">View Source</a>
   </span>
   <a id="Bunit_ConcurrentRenderEventSubscriber_OnError_" data-uid="Bunit.ConcurrentRenderEventSubscriber.OnError*"></a>
-  <h4 id="Bunit_ConcurrentRenderEventSubscriber_OnError_Exception_" data-uid="Bunit.ConcurrentRenderEventSubscriber.OnError(Exception)">OnError(Exception)</h4>
+  <h4 id="Bunit_ConcurrentRenderEventSubscriber_OnError_System_Exception_" data-uid="Bunit.ConcurrentRenderEventSubscriber.OnError(System.Exception)">OnError(Exception)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -291,7 +319,7 @@ renders will happen.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Exception</span></td>
+        <td><span class="xref">System.Exception</span></td>
         <td><span class="parametername">exception</span></td>
         <td></td>
       </tr>
@@ -344,6 +372,10 @@ renders will happen.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Unsubscribe()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IObserver&lt;T&gt;</span>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>

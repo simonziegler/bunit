@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct ComponentParameter
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -93,7 +93,22 @@ component under test.</p>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Bunit.ComponentParameter.html">ComponentParameter</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Bunit.ComponentParameter.html">ComponentParameter</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.ValueType.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
@@ -148,7 +163,7 @@ component under test.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Name { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -160,7 +175,7 @@ component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -179,7 +194,7 @@ component under test.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object? Value { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public object Value { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -191,7 +206,7 @@ component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -200,19 +215,19 @@ component under test.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_CreateCascadingValue_System_Nullable_System_String__System_Object_.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.CreateCascadingValue(System.Nullable%7BSystem.String%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_CreateCascadingValue_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.CreateCascadingValue(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Rendering/ComponentParameter.cs/#L54">View Source</a>
   </span>
   <a id="Bunit_ComponentParameter_CreateCascadingValue_" data-uid="Bunit.ComponentParameter.CreateCascadingValue*"></a>
-  <h4 id="Bunit_ComponentParameter_CreateCascadingValue_System_Nullable_System_String__System_Object_" data-uid="Bunit.ComponentParameter.CreateCascadingValue(System.Nullable{System.String},System.Object)">CreateCascadingValue(Nullable&lt;String&gt;, Object)</h4>
+  <h4 id="Bunit_ComponentParameter_CreateCascadingValue_System_String_System_Object_" data-uid="Bunit.ComponentParameter.CreateCascadingValue(System.String,System.Object)">CreateCascadingValue(String, Object)</h4>
   <div class="markdown level1 summary"><p>Create a Cascading Value parameter for a component under test.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ComponentParameter CreateCascadingValue(string? name, object value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ComponentParameter CreateCascadingValue(string name, object value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -225,7 +240,7 @@ component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
         <td><p>A optional name for the cascading value</p>
 </td>
@@ -255,19 +270,19 @@ component under test.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_CreateParameter_System_String_System_Nullable_System_Object__.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.CreateParameter(System.String%2CSystem.Nullable%7BSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_CreateParameter_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.CreateParameter(System.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Rendering/ComponentParameter.cs/#L46">View Source</a>
   </span>
   <a id="Bunit_ComponentParameter_CreateParameter_" data-uid="Bunit.ComponentParameter.CreateParameter*"></a>
-  <h4 id="Bunit_ComponentParameter_CreateParameter_System_String_System_Nullable_System_Object__" data-uid="Bunit.ComponentParameter.CreateParameter(System.String,System.Nullable{System.Object})">CreateParameter(String, Nullable&lt;Object&gt;)</h4>
+  <h4 id="Bunit_ComponentParameter_CreateParameter_System_String_System_Object_" data-uid="Bunit.ComponentParameter.CreateParameter(System.String,System.Object)">CreateParameter(String, Object)</h4>
   <div class="markdown level1 summary"><p>Create a parameter for a component under test.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ComponentParameter CreateParameter(string name, object? value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ComponentParameter CreateParameter(string name, object value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -286,7 +301,7 @@ component under test.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">value</span></td>
         <td><p>Value or null to pass the component</p>
 </td>
@@ -402,6 +417,8 @@ component under test.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.Equals(System.Object)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_GetHashCode.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -432,6 +449,8 @@ component under test.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.GetHashCode()</span></div>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -488,19 +507,19 @@ component under test.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_Nullable_System_String__System_Nullable_System_Object__System_Boolean___Bunit_ComponentParameter.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.op_Implicit(System.ValueTuple%7BSystem.Nullable%7BSystem.String%7D%2CSystem.Nullable%7BSystem.Object%7D%2CSystem.Boolean%7D)~Bunit.ComponentParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_String_System_Object_System_Boolean___Bunit_ComponentParameter.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.op_Implicit(System.ValueTuple%7BSystem.String%2CSystem.Object%2CSystem.Boolean%7D)~Bunit.ComponentParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Rendering/ComponentParameter.cs/#L68">View Source</a>
   </span>
   <a id="Bunit_ComponentParameter_op_Implicit_" data-uid="Bunit.ComponentParameter.op_Implicit*"></a>
-  <h4 id="Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_Nullable_System_String__System_Nullable_System_Object__System_Boolean___Bunit_ComponentParameter" data-uid="Bunit.ComponentParameter.op_Implicit(System.ValueTuple{System.Nullable{System.String},System.Nullable{System.Object},System.Boolean})~Bunit.ComponentParameter">Implicit((Nullable&lt;String&gt; name, Nullable&lt;Object&gt; value, Boolean isCascadingValue) to ComponentParameter)</h4>
+  <h4 id="Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_String_System_Object_System_Boolean___Bunit_ComponentParameter" data-uid="Bunit.ComponentParameter.op_Implicit(System.ValueTuple{System.String,System.Object,System.Boolean})~Bunit.ComponentParameter">Implicit((String name, Object value, Boolean isCascadingValue) to ComponentParameter)</h4>
   <div class="markdown level1 summary"><p>Create a parameter or cascading value for a component under test.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator ComponentParameter((string? name, object? value, bool isCascadingValue)input)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator ComponentParameter((string name, object value, bool isCascadingValue) input)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -513,7 +532,7 @@ component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;, <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">input</span></td>
         <td><p>A name/value/isCascadingValue triple for the parameter</p>
 </td>
@@ -537,19 +556,19 @@ component under test.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_String_System_Nullable_System_Object____Bunit_ComponentParameter.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.op_Implicit(System.ValueTuple%7BSystem.String%2CSystem.Nullable%7BSystem.Object%7D%7D)~Bunit.ComponentParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_String_System_Object___Bunit_ComponentParameter.md&amp;value=---%0Auid%3A%20Bunit.ComponentParameter.op_Implicit(System.ValueTuple%7BSystem.String%2CSystem.Object%7D)~Bunit.ComponentParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Rendering/ComponentParameter.cs/#L61">View Source</a>
   </span>
   <a id="Bunit_ComponentParameter_op_Implicit_" data-uid="Bunit.ComponentParameter.op_Implicit*"></a>
-  <h4 id="Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_String_System_Nullable_System_Object____Bunit_ComponentParameter" data-uid="Bunit.ComponentParameter.op_Implicit(System.ValueTuple{System.String,System.Nullable{System.Object}})~Bunit.ComponentParameter">Implicit((String name, Nullable&lt;Object&gt; value) to ComponentParameter)</h4>
+  <h4 id="Bunit_ComponentParameter_op_Implicit_System_ValueTuple_System_String_System_Object___Bunit_ComponentParameter" data-uid="Bunit.ComponentParameter.op_Implicit(System.ValueTuple{System.String,System.Object})~Bunit.ComponentParameter">Implicit((String name, Object value) to ComponentParameter)</h4>
   <div class="markdown level1 summary"><p>Create a parameter for a component under test.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator ComponentParameter((string name, object? value)input)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator ComponentParameter((string name, object value) input)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -562,7 +581,7 @@ component under test.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
+        <td><span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">input</span></td>
         <td><p>A name/value pair for the parameter</p>
 </td>
@@ -638,7 +657,11 @@ component under test.</p>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEquatable&lt;&gt;</span>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Bunit.Mocking.JSInterop.JsRuntimeAssertExtensions.html#Bunit_Mocking_JSInterop_JsRuntimeAssertExtensions_ShouldBeElementReferenceTo_System_Object_IElement_">JsRuntimeAssertExtensions.ShouldBeElementReferenceTo(Object, IElement)</a>
   </div>
 </article>
           </div>

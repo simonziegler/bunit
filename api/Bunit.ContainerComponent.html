@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ContainerComponent
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -218,7 +218,7 @@ component is found, its child content is also searched recursively.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public (int Id, TComponent Component)GetComponent&lt;TComponent&gt;()
+    <pre><code class="lang-csharp hljs">public (int Id, TComponent Component) GetComponent&lt;TComponent&gt;()
     where TComponent : IComponent</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -296,7 +296,7 @@ component is found, its child content is also searched recursively.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Int32</span>, TComponent&gt;&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<span class="xref">System.Int32</span>, TComponent&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -393,7 +393,7 @@ component is found, its child content is also searched recursively.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td></td>
       </tr>
     </tbody>

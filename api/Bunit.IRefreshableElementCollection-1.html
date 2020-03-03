@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IRefreshableElementCollection&lt;T&gt;
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -92,11 +92,23 @@ elements in an <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFrag
 The collection can be refreshed either manually or automatically.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Collections.Generic.IReadOnlyList&lt;T&gt;.Item[System.Int32]</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;.Count</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
   <h5 id="Bunit_IRefreshableElementCollection_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IRefreshableElementCollection&lt;T&gt; : IReadOnlyList&lt;T&gt; where T : IElement</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IRefreshableElementCollection&lt;T&gt; : IReadOnlyList&lt;T&gt;, IReadOnlyCollection&lt;T&gt;, IEnumerable&lt;T&gt;, IEnumerable where T : IElement</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -167,6 +179,12 @@ The collection can be refreshed either manually or automatically.</p>
     <pre><code class="lang-csharp hljs">void Refresh()</code></pre>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Bunit.CollectionAssertExtensions.html#Bunit_CollectionAssertExtensions_ShouldAllBe__1_System_Collections_Generic_IEnumerable___0__System_Action___0____">CollectionAssertExtensions.ShouldAllBe&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.CollectionAssertExtensions.html#Bunit_CollectionAssertExtensions_ShouldAllBe__1_System_Collections_Generic_IEnumerable___0__System_Action___0_System_Int32____">CollectionAssertExtensions.ShouldAllBe&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T, Int32&gt;[])</a>
+  </div>
   <div>
       <a class="xref" href="Bunit.Mocking.JSInterop.JsRuntimeAssertExtensions.html#Bunit_Mocking_JSInterop_JsRuntimeAssertExtensions_ShouldBeElementReferenceTo_System_Object_IElement_">JsRuntimeAssertExtensions.ShouldBeElementReferenceTo(Object, IElement)</a>
   </div>

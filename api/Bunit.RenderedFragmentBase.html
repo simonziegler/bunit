@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RenderedFragmentBase
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -100,14 +100,76 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
   <h5 id="Bunit_RenderedFragmentBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class RenderedFragmentBase : object, IRenderedFragment</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class RenderedFragmentBase : IRenderedFragment</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase__ctor_Bunit_ITestContext_Bunit_ContainerComponent_.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.%23ctor(Bunit.ITestContext%2CBunit.ContainerComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/egil/bunit/blob/master/src/Rendering/RenderedFragmentBase.cs/#L74">View Source</a>
+  </span>
+  <a id="Bunit_RenderedFragmentBase__ctor_" data-uid="Bunit.RenderedFragmentBase.#ctor*"></a>
+  <h4 id="Bunit_RenderedFragmentBase__ctor_Bunit_ITestContext_Bunit_ContainerComponent_" data-uid="Bunit.RenderedFragmentBase.#ctor(Bunit.ITestContext,Bunit.ContainerComponent)">RenderedFragmentBase(ITestContext, ContainerComponent)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of the <a class="xref" href="Bunit.RenderedFragmentBase.html">RenderedFragmentBase</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected RenderedFragmentBase(ITestContext testContext, ContainerComponent container)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Bunit.ITestContext.html">ITestContext</a></td>
+        <td><span class="parametername">testContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Bunit.ContainerComponent.html">ContainerComponent</a></td>
+        <td><span class="parametername">container</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase__ctor_Bunit_ITestContext_RenderFragment_.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.%23ctor(Bunit.ITestContext%2CRenderFragment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -313,7 +375,7 @@ on the HTML markup from the rendered fragment/component.</p>
   </span>
   <a id="Bunit_RenderedFragmentBase_RenderEvents_" data-uid="Bunit.RenderedFragmentBase.RenderEvents*"></a>
   <h4 id="Bunit_RenderedFragmentBase_RenderEvents" data-uid="Bunit.RenderedFragmentBase.RenderEvents">RenderEvents</h4>
-  <div class="markdown level1 summary"><p>Gets an <see cref="!:IObservable&lt;RenderEvent>"></see> which will provide subscribers with <a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>s
+  <div class="markdown level1 summary"><p>Gets an <span class="xref">System.IObservable&lt;T&gt;</span> which will provide subscribers with <a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>s
 whenever the <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a> is rendered.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -331,7 +393,7 @@ whenever the <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragme
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IObservable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
+        <td><span class="xref">System.IObservable</span>&lt;<a class="xref" href="Bunit.RenderEvent.html">RenderEvent</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -367,11 +429,237 @@ whenever the <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragme
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase_FindComponent__1.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.FindComponent%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/egil/bunit/blob/master/src/Rendering/RenderedFragmentBase.cs/#L86">View Source</a>
+  </span>
+  <a id="Bunit_RenderedFragmentBase_FindComponent_" data-uid="Bunit.RenderedFragmentBase.FindComponent*"></a>
+  <h4 id="Bunit_RenderedFragmentBase_FindComponent__1" data-uid="Bunit.RenderedFragmentBase.FindComponent``1">FindComponent&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Finds the first component of type <code data-dev-comment-type="typeparamref" class="typeparamref">TComponent</code> in the render tree of
+this <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IRenderedComponent&lt;T&gt; FindComponent&lt;T&gt;()
+    where T : class, IComponent</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent</a>&lt;T&gt;</td>
+        <td><p>The <a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent&lt;TComponent&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Bunit.ComponentNotFoundException.html">ComponentNotFoundException</a></td>
+        <td><p>Thrown if a component of type <code data-dev-comment-type="typeparamref" class="typeparamref">TComponent</code> was not found in the render tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase_FindComponents__1.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.FindComponents%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/egil/bunit/blob/master/src/Rendering/RenderedFragmentBase.cs/#L93">View Source</a>
+  </span>
+  <a id="Bunit_RenderedFragmentBase_FindComponents_" data-uid="Bunit.RenderedFragmentBase.FindComponents*"></a>
+  <h4 id="Bunit_RenderedFragmentBase_FindComponents__1" data-uid="Bunit.RenderedFragmentBase.FindComponents``1">FindComponents&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Finds all components of type <code data-dev-comment-type="typeparamref" class="typeparamref">TComponent</code> in the render tree of
+this <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;IRenderedComponent&lt;T&gt;&gt; FindComponents&lt;T&gt;()
+    where T : class, IComponent</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent</a>&lt;T&gt;&gt;</td>
+        <td><p>The <a class="xref" href="Bunit.IRenderedComponent-1.html">IRenderedComponent&lt;TComponent&gt;</a>s</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase_GetChangesSinceFirstRender.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.GetChangesSinceFirstRender%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/egil/bunit/blob/master/src/Rendering/RenderedFragmentBase.cs/#L123">View Source</a>
+  </span>
+  <a id="Bunit_RenderedFragmentBase_GetChangesSinceFirstRender_" data-uid="Bunit.RenderedFragmentBase.GetChangesSinceFirstRender*"></a>
+  <h4 id="Bunit_RenderedFragmentBase_GetChangesSinceFirstRender" data-uid="Bunit.RenderedFragmentBase.GetChangesSinceFirstRender">GetChangesSinceFirstRender()</h4>
+  <div class="markdown level1 summary"><p>Performs a comparison of the markup produced by the initial rendering of the
+fragment or component under test with the current rendering of the fragment
+or component under test.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;IDiff&gt; GetChangesSinceFirstRender()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">IDiff</span>&gt;</td>
+        <td><p>A list of differences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase_GetChangesSinceSnapshot.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.GetChangesSinceSnapshot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/egil/bunit/blob/master/src/Rendering/RenderedFragmentBase.cs/#L111">View Source</a>
+  </span>
+  <a id="Bunit_RenderedFragmentBase_GetChangesSinceSnapshot_" data-uid="Bunit.RenderedFragmentBase.GetChangesSinceSnapshot*"></a>
+  <h4 id="Bunit_RenderedFragmentBase_GetChangesSinceSnapshot" data-uid="Bunit.RenderedFragmentBase.GetChangesSinceSnapshot">GetChangesSinceSnapshot()</h4>
+  <div class="markdown level1 summary"><p>Performs a comparison of the markup produced by the rendering of the
+fragment or component under test at the time the <a class="xref" href="Bunit.IRenderedFragment.html#Bunit_IRenderedFragment_SaveSnapshot">SaveSnapshot()</a> was called
+with the current rendering of the fragment or component under test.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;IDiff&gt; GetChangesSinceSnapshot()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">IDiff</span>&gt;</td>
+        <td><p>A list of differences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_RenderedFragmentBase_SaveSnapshot.md&amp;value=---%0Auid%3A%20Bunit.RenderedFragmentBase.SaveSnapshot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/egil/bunit/blob/master/src/Rendering/RenderedFragmentBase.cs/#L104">View Source</a>
+  </span>
+  <a id="Bunit_RenderedFragmentBase_SaveSnapshot_" data-uid="Bunit.RenderedFragmentBase.SaveSnapshot*"></a>
+  <h4 id="Bunit_RenderedFragmentBase_SaveSnapshot" data-uid="Bunit.RenderedFragmentBase.SaveSnapshot">SaveSnapshot()</h4>
+  <div class="markdown level1 summary"><p>Saves the markup from the current rendering of the fragment or component under test.
+Use the method <a class="xref" href="Bunit.IRenderedFragment.html#Bunit_IRenderedFragment_GetChangesSinceSnapshot">GetChangesSinceSnapshot()</a> later to get the difference between
+the snapshot and the rendered markup at that time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SaveSnapshot()</code></pre>
+  </div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Bunit.CompareToExtensions.html#Bunit_CompareToExtensions_CompareTo_Bunit_IRenderedFragment_System_String_">CompareToExtensions.CompareTo(IRenderedFragment, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.CompareToExtensions.html#Bunit_CompareToExtensions_CompareTo_Bunit_IRenderedFragment_Bunit_IRenderedFragment_">CompareToExtensions.CompareTo(IRenderedFragment, IRenderedFragment)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.MarkupMatchesAssertExtensions.html#Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_String_">MarkupMatchesAssertExtensions.MarkupMatches(IRenderedFragment, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.MarkupMatchesAssertExtensions.html#Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_String_">MarkupMatchesAssertExtensions.MarkupMatches(IRenderedFragment, IRenderedFragment, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.RenderedFragmentQueryExtensions.html#Bunit_RenderedFragmentQueryExtensions_Find_Bunit_IRenderedFragment_System_String_">RenderedFragmentQueryExtensions.Find(IRenderedFragment, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.RenderedFragmentQueryExtensions.html#Bunit_RenderedFragmentQueryExtensions_FindAll_Bunit_IRenderedFragment_System_String_System_Boolean_">RenderedFragmentQueryExtensions.FindAll(IRenderedFragment, String, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForState_Bunit_IRenderedFragment_System_Func_System_Boolean__System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForState(IRenderedFragment, Func&lt;Boolean&gt;, Nullable&lt;TimeSpan&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForAssertion_Bunit_IRenderedFragment_System_Action_System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForAssertion(IRenderedFragment, Action, Nullable&lt;TimeSpan&gt;)</a>
+  </div>
   <div>
       <a class="xref" href="Bunit.Mocking.JSInterop.JsRuntimeAssertExtensions.html#Bunit_Mocking_JSInterop_JsRuntimeAssertExtensions_ShouldBeElementReferenceTo_System_Object_IElement_">JsRuntimeAssertExtensions.ShouldBeElementReferenceTo(Object, IElement)</a>
   </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TestContext
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -101,13 +101,37 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Bunit.ITestContext.html">ITestContext</a></div>
-    <div><span class="xref">IDisposable</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
   <h5 id="Bunit_TestContext_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TestContext : object, ITestContext, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class TestContext : ITestContext, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -364,9 +388,18 @@ and returns a list of nodes.</p>
       <a class="xref" href="Bunit.ITestContext.html">ITestContext</a>
   </div>
   <div>
-      <span class="xref">IDisposable</span>
+      <span class="xref">System.IDisposable</span>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForNextRender_Bunit_ITestContext_System_Action_System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForNextRender(ITestContext, Action, Nullable&lt;TimeSpan&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForState_Bunit_ITestContext_System_Func_System_Boolean__System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForState(ITestContext, Func&lt;Boolean&gt;, Nullable&lt;TimeSpan&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Bunit.RenderWaitingHelperExtensions.html#Bunit_RenderWaitingHelperExtensions_WaitForAssertion_Bunit_ITestContext_System_Action_System_Nullable_System_TimeSpan__">RenderWaitingHelperExtensions.WaitForAssertion(ITestContext, Action, Nullable&lt;TimeSpan&gt;)</a>
+  </div>
   <div>
       <a class="xref" href="Bunit.Mocking.JSInterop.JsRuntimeAssertExtensions.html#Bunit_Mocking_JSInterop_JsRuntimeAssertExtensions_ShouldBeElementReferenceTo_System_Object_IElement_">JsRuntimeAssertExtensions.ShouldBeElementReferenceTo(Object, IElement)</a>
   </div>

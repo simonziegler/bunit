@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MarkupMatchesAssertExtensions
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -95,30 +95,54 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">MarkupMatchesAssertExtensions</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
   <h5 id="Bunit_MarkupMatchesAssertExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class MarkupMatchesAssertExtensions : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class MarkupMatchesAssertExtensions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment%2CBunit.IRenderedFragment%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment%2CBunit.IRenderedFragment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L40">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment,Bunit.IRenderedFragment,System.Nullable{System.String})">MarkupMatches(IRenderedFragment, IRenderedFragment, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_Bunit_IRenderedFragment_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment,Bunit.IRenderedFragment,System.String)">MarkupMatches(IRenderedFragment, IRenderedFragment, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the rendered markup from the <code data-dev-comment-type="paramref" class="paramref">actual</code> <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a> matches
 the rendered markup from the <code data-dev-comment-type="paramref" class="paramref">expected</code> <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a> type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this IRenderedFragment actual, IRenderedFragment expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this IRenderedFragment actual, IRenderedFragment expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -143,7 +167,7 @@ the rendered markup from the <code data-dev-comment-type="paramref" class="param
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -168,20 +192,20 @@ the rendered markup from the <code data-dev-comment-type="paramref" class="param
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L22">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment,System.String,System.Nullable{System.String})">MarkupMatches(IRenderedFragment, String, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_Bunit_IRenderedFragment_System_String_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(Bunit.IRenderedFragment,System.String,System.String)">MarkupMatches(IRenderedFragment, String, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the rendered markup from the <code data-dev-comment-type="paramref" class="paramref">actual</code> <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a> matches
 the <code data-dev-comment-type="paramref" class="paramref">expected</code> markup, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a> type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this IRenderedFragment actual, string expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this IRenderedFragment actual, string expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -206,7 +230,7 @@ the <code data-dev-comment-type="paramref" class="paramref">expected</code> mark
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -231,13 +255,13 @@ the <code data-dev-comment-type="paramref" class="paramref">expected</code> mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_Bunit_IRenderedFragment_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode%2CBunit.IRenderedFragment%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_Bunit_IRenderedFragment_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode%2CBunit.IRenderedFragment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L74">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_Bunit_IRenderedFragment_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode,Bunit.IRenderedFragment,System.Nullable{System.String})">MarkupMatches(INode, IRenderedFragment, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_Bunit_IRenderedFragment_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode,Bunit.IRenderedFragment,System.String)">MarkupMatches(INode, IRenderedFragment, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INode"></see> matches
 the rendered markup from the <code data-dev-comment-type="paramref" class="paramref">expected</code> <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -245,7 +269,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INode actual, IRenderedFragment expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INode actual, IRenderedFragment expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -270,7 +294,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -295,13 +319,13 @@ type.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_INodeList_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode%2CINodeList%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_INodeList_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode%2CINodeList%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L177">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_INodeList_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode,INodeList,System.Nullable{System.String})">MarkupMatches(INode, INodeList, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_INodeList_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode,INodeList,System.String)">MarkupMatches(INode, INodeList, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INode"></see> matches
 the <code data-dev-comment-type="paramref" class="paramref">expected</code> <see cref="!:INodeList"></see>, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -309,7 +333,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INode actual, INodeList expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INode actual, INodeList expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -334,7 +358,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -359,13 +383,13 @@ type.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_System_String_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_System_String_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L91">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_System_String_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode,System.String,System.Nullable{System.String})">MarkupMatches(INode, String, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INode_System_String_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INode,System.String,System.String)">MarkupMatches(INode, String, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INode"></see> matches
 the <code data-dev-comment-type="paramref" class="paramref">expected</code> markup, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -373,7 +397,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INode actual, string expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INode actual, string expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -398,7 +422,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -423,13 +447,13 @@ type.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_Bunit_IRenderedFragment_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CBunit.IRenderedFragment%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_Bunit_IRenderedFragment_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CBunit.IRenderedFragment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L57">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_Bunit_IRenderedFragment_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,Bunit.IRenderedFragment,System.Nullable{System.String})">MarkupMatches(INodeList, IRenderedFragment, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_Bunit_IRenderedFragment_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,Bunit.IRenderedFragment,System.String)">MarkupMatches(INodeList, IRenderedFragment, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INodeList"></see> matches
 the rendered markup from the <code data-dev-comment-type="paramref" class="paramref">expected</code> <a class="xref" href="Bunit.IRenderedFragment.html">IRenderedFragment</a>, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -437,7 +461,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, IRenderedFragment expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, IRenderedFragment expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -462,7 +486,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -487,13 +511,13 @@ type.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INode_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CINode%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INode_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CINode%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L160">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INode_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,INode,System.Nullable{System.String})">MarkupMatches(INodeList, INode, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INode_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,INode,System.String)">MarkupMatches(INodeList, INode, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INodeList"></see> matches
 the <code data-dev-comment-type="paramref" class="paramref">expected</code> <see cref="!:INode"></see>, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -501,7 +525,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, INode expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, INode expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -526,7 +550,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -551,13 +575,13 @@ type.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INodeList_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CINodeList%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INodeList_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CINodeList%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L143">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INodeList_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,INodeList,System.Nullable{System.String})">MarkupMatches(INodeList, INodeList, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_INodeList_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,INodeList,System.String)">MarkupMatches(INodeList, INodeList, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INodeList"></see> matches
 the <code data-dev-comment-type="paramref" class="paramref">expected</code> <see cref="!:INodeList"></see>, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -565,7 +589,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, INodeList expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, INodeList expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -590,7 +614,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>
@@ -615,13 +639,13 @@ type.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_System_String_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_System_String_System_String_.md&amp;value=---%0Auid%3A%20Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/Asserting/MarkupMatchesAssertExtensions.cs/#L117">View Source</a>
   </span>
   <a id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches*"></a>
-  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_System_String_System_Nullable_System_String__" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,System.String,System.Nullable{System.String})">MarkupMatches(INodeList, String, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_MarkupMatchesAssertExtensions_MarkupMatches_INodeList_System_String_System_String_" data-uid="Bunit.MarkupMatchesAssertExtensions.MarkupMatches(INodeList,System.String,System.String)">MarkupMatches(INodeList, String, String)</h4>
   <div class="markdown level1 summary"><p>Verifies that the <code data-dev-comment-type="paramref" class="paramref">actual</code> <see cref="!:INodeList"></see> matches
 the <code data-dev-comment-type="paramref" class="paramref">expected</code> markup, using the <a class="xref" href="Bunit.Diffing.HtmlComparer.html">HtmlComparer</a>
 type.</p>
@@ -629,7 +653,7 @@ type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, string expected, string? userMessage = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void MarkupMatches(this INodeList actual, string expected, string userMessage = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -654,7 +678,7 @@ type.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">userMessage</span></td>
         <td><p>A custom user message to display in case the verification fails.</p>
 </td>

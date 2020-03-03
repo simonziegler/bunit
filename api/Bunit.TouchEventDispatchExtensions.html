@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TouchEventDispatchExtensions
    | bUnit ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.50.0.0">
     <meta name="description" content="bUnit is a unit testing library for Blazor Components. You can easily define components under test in C# or Razor syntax and verify outcome using semantic HTML diffing/comparison logic. You can interact with and inspect components, trigger event handlers, provide cascading values, inject services, mock IJsRuntime, and perform snapshot testing.">
     <!--<link rel="shortcut icon" href="../favicon.ico">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -95,30 +95,54 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">TouchEventDispatchExtensions</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Bunit.html">Bunit</a></h6>
   <h6><strong>Assembly</strong>: Bunit.dll</h6>
   <h5 id="Bunit_TouchEventDispatchExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class TouchEventDispatchExtensions : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class TouchEventDispatchExtensions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchCancel_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchCancel(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2Ctouches%2CTouchPoint%5B%5D%2CtargetTouches%2CTouchPoint%5B%5D%2CchangedTouches%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchCancel_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchCancel(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/EventDispatchExtensions/TouchEventDispatchExtensions.cs/#L33">View Source</a>
   </span>
   <a id="Bunit_TouchEventDispatchExtensions_TouchCancel_" data-uid="Bunit.TouchEventDispatchExtensions.TouchCancel*"></a>
-  <h4 id="Bunit_TouchEventDispatchExtensions_TouchCancel_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__" data-uid="Bunit.TouchEventDispatchExtensions.TouchCancel(IElement,System.Int64,TouchPoint[],touches,TouchPoint[],targetTouches,TouchPoint[],changedTouches,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.String})">TouchCancel(IElement, Int64, TouchPoint[], touches, TouchPoint[], targetTouches, TouchPoint[], changedTouches, Boolean, Boolean, Boolean, Boolean, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_TouchEventDispatchExtensions_TouchCancel_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_" data-uid="Bunit.TouchEventDispatchExtensions.TouchCancel(IElement,System.Int64,TouchPoint[],TouchPoint[],TouchPoint[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">TouchCancel(IElement, Int64, TouchPoint[], TouchPoint[], TouchPoint[], Boolean, Boolean, Boolean, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Raises the <code>@ontouchcancel</code> event on <code data-dev-comment-type="paramref" class="paramref">element</code>, passing the provided
 properties to the event handler via a <see cref="!:TouchEventArgs"></see> object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void TouchCancel(this IElement element, long detail = null, TouchPoint[], touches  = null, TouchPoint[], targetTouches  = null, TouchPoint[], changedTouches  = null, bool ctrlKey = null, bool shiftKey = null, bool altKey = null, bool metaKey = null, string? type = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void TouchCancel(this IElement element, long detail = 0L, TouchPoint[] touches = null, TouchPoint[] targetTouches = null, TouchPoint[] changedTouches = null, bool ctrlKey = false, bool shiftKey = false, bool altKey = false, bool metaKey = false, string type = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,33 +168,26 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">touches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">touches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact currently touching the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">targetTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">targetTouches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact that is touching the surface and started on the element that is the target of the current event.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">changedTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">changedTouches</span></td>
+        <td><p>A list of Touches for every point of contact which contributed to the event.
+For the touchstart event this must be a list of the touch points that just became
+active with the current event. For the touchmove event this must be a list of
+the touch points that have moved since the last event. For the touchend and touchcancel
+events this must be a list of the touch points that have just been removed from
+the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -197,7 +214,7 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">type</span></td>
         <td><p>Gets or sets the type of the event.</p>
 </td>
@@ -294,7 +311,7 @@ to the event handler.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task that completes when the event handler is done.</p>
 </td>
       </tr>
@@ -302,20 +319,20 @@ to the event handler.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchEnd_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchEnd(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2Ctouches%2CTouchPoint%5B%5D%2CtargetTouches%2CTouchPoint%5B%5D%2CchangedTouches%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchEnd_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchEnd(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/EventDispatchExtensions/TouchEventDispatchExtensions.cs/#L75">View Source</a>
   </span>
   <a id="Bunit_TouchEventDispatchExtensions_TouchEnd_" data-uid="Bunit.TouchEventDispatchExtensions.TouchEnd*"></a>
-  <h4 id="Bunit_TouchEventDispatchExtensions_TouchEnd_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__" data-uid="Bunit.TouchEventDispatchExtensions.TouchEnd(IElement,System.Int64,TouchPoint[],touches,TouchPoint[],targetTouches,TouchPoint[],changedTouches,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.String})">TouchEnd(IElement, Int64, TouchPoint[], touches, TouchPoint[], targetTouches, TouchPoint[], changedTouches, Boolean, Boolean, Boolean, Boolean, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_TouchEventDispatchExtensions_TouchEnd_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_" data-uid="Bunit.TouchEventDispatchExtensions.TouchEnd(IElement,System.Int64,TouchPoint[],TouchPoint[],TouchPoint[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">TouchEnd(IElement, Int64, TouchPoint[], TouchPoint[], TouchPoint[], Boolean, Boolean, Boolean, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Raises the <code>@ontouchend</code> event on <code data-dev-comment-type="paramref" class="paramref">element</code>, passing the provided
 properties to the event handler via a <see cref="!:TouchEventArgs"></see> object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void TouchEnd(this IElement element, long detail = null, TouchPoint[], touches  = null, TouchPoint[], targetTouches  = null, TouchPoint[], changedTouches  = null, bool ctrlKey = null, bool shiftKey = null, bool altKey = null, bool metaKey = null, string? type = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void TouchEnd(this IElement element, long detail = 0L, TouchPoint[] touches = null, TouchPoint[] targetTouches = null, TouchPoint[] changedTouches = null, bool ctrlKey = false, bool shiftKey = false, bool altKey = false, bool metaKey = false, string type = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -341,33 +358,26 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">touches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">touches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact currently touching the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">targetTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">targetTouches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact that is touching the surface and started on the element that is the target of the current event.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">changedTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">changedTouches</span></td>
+        <td><p>A list of Touches for every point of contact which contributed to the event.
+For the touchstart event this must be a list of the touch points that just became
+active with the current event. For the touchmove event this must be a list of
+the touch points that have moved since the last event. For the touchend and touchcancel
+events this must be a list of the touch points that have just been removed from
+the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -394,7 +404,7 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">type</span></td>
         <td><p>Gets or sets the type of the event.</p>
 </td>
@@ -491,7 +501,7 @@ to the event handler.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task that completes when the event handler is done.</p>
 </td>
       </tr>
@@ -499,20 +509,20 @@ to the event handler.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchEnter_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchEnter(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2Ctouches%2CTouchPoint%5B%5D%2CtargetTouches%2CTouchPoint%5B%5D%2CchangedTouches%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchEnter_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchEnter(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/EventDispatchExtensions/TouchEventDispatchExtensions.cs/#L201">View Source</a>
   </span>
   <a id="Bunit_TouchEventDispatchExtensions_TouchEnter_" data-uid="Bunit.TouchEventDispatchExtensions.TouchEnter*"></a>
-  <h4 id="Bunit_TouchEventDispatchExtensions_TouchEnter_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__" data-uid="Bunit.TouchEventDispatchExtensions.TouchEnter(IElement,System.Int64,TouchPoint[],touches,TouchPoint[],targetTouches,TouchPoint[],changedTouches,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.String})">TouchEnter(IElement, Int64, TouchPoint[], touches, TouchPoint[], targetTouches, TouchPoint[], changedTouches, Boolean, Boolean, Boolean, Boolean, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_TouchEventDispatchExtensions_TouchEnter_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_" data-uid="Bunit.TouchEventDispatchExtensions.TouchEnter(IElement,System.Int64,TouchPoint[],TouchPoint[],TouchPoint[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">TouchEnter(IElement, Int64, TouchPoint[], TouchPoint[], TouchPoint[], Boolean, Boolean, Boolean, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Raises the <code>@ontouchenter</code> event on <code data-dev-comment-type="paramref" class="paramref">element</code>, passing the provided
 properties to the event handler via a <see cref="!:TouchEventArgs"></see> object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void TouchEnter(this IElement element, long detail = null, TouchPoint[], touches  = null, TouchPoint[], targetTouches  = null, TouchPoint[], changedTouches  = null, bool ctrlKey = null, bool shiftKey = null, bool altKey = null, bool metaKey = null, string? type = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void TouchEnter(this IElement element, long detail = 0L, TouchPoint[] touches = null, TouchPoint[] targetTouches = null, TouchPoint[] changedTouches = null, bool ctrlKey = false, bool shiftKey = false, bool altKey = false, bool metaKey = false, string type = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -538,33 +548,26 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">touches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">touches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact currently touching the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">targetTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">targetTouches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact that is touching the surface and started on the element that is the target of the current event.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">changedTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">changedTouches</span></td>
+        <td><p>A list of Touches for every point of contact which contributed to the event.
+For the touchstart event this must be a list of the touch points that just became
+active with the current event. For the touchmove event this must be a list of
+the touch points that have moved since the last event. For the touchend and touchcancel
+events this must be a list of the touch points that have just been removed from
+the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -591,7 +594,7 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">type</span></td>
         <td><p>Gets or sets the type of the event.</p>
 </td>
@@ -688,7 +691,7 @@ to the event handler.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task that completes when the event handler is done.</p>
 </td>
       </tr>
@@ -696,20 +699,20 @@ to the event handler.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchLeave_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchLeave(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2Ctouches%2CTouchPoint%5B%5D%2CtargetTouches%2CTouchPoint%5B%5D%2CchangedTouches%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchLeave_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchLeave(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/EventDispatchExtensions/TouchEventDispatchExtensions.cs/#L243">View Source</a>
   </span>
   <a id="Bunit_TouchEventDispatchExtensions_TouchLeave_" data-uid="Bunit.TouchEventDispatchExtensions.TouchLeave*"></a>
-  <h4 id="Bunit_TouchEventDispatchExtensions_TouchLeave_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__" data-uid="Bunit.TouchEventDispatchExtensions.TouchLeave(IElement,System.Int64,TouchPoint[],touches,TouchPoint[],targetTouches,TouchPoint[],changedTouches,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.String})">TouchLeave(IElement, Int64, TouchPoint[], touches, TouchPoint[], targetTouches, TouchPoint[], changedTouches, Boolean, Boolean, Boolean, Boolean, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_TouchEventDispatchExtensions_TouchLeave_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_" data-uid="Bunit.TouchEventDispatchExtensions.TouchLeave(IElement,System.Int64,TouchPoint[],TouchPoint[],TouchPoint[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">TouchLeave(IElement, Int64, TouchPoint[], TouchPoint[], TouchPoint[], Boolean, Boolean, Boolean, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Raises the <code>@ontouchleave</code> event on <code data-dev-comment-type="paramref" class="paramref">element</code>, passing the provided
 properties to the event handler via a <see cref="!:TouchEventArgs"></see> object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void TouchLeave(this IElement element, long detail = null, TouchPoint[], touches  = null, TouchPoint[], targetTouches  = null, TouchPoint[], changedTouches  = null, bool ctrlKey = null, bool shiftKey = null, bool altKey = null, bool metaKey = null, string? type = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void TouchLeave(this IElement element, long detail = 0L, TouchPoint[] touches = null, TouchPoint[] targetTouches = null, TouchPoint[] changedTouches = null, bool ctrlKey = false, bool shiftKey = false, bool altKey = false, bool metaKey = false, string type = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -735,33 +738,26 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">touches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">touches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact currently touching the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">targetTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">targetTouches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact that is touching the surface and started on the element that is the target of the current event.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">changedTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">changedTouches</span></td>
+        <td><p>A list of Touches for every point of contact which contributed to the event.
+For the touchstart event this must be a list of the touch points that just became
+active with the current event. For the touchmove event this must be a list of
+the touch points that have moved since the last event. For the touchend and touchcancel
+events this must be a list of the touch points that have just been removed from
+the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -788,7 +784,7 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">type</span></td>
         <td><p>Gets or sets the type of the event.</p>
 </td>
@@ -885,7 +881,7 @@ to the event handler.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task that completes when the event handler is done.</p>
 </td>
       </tr>
@@ -893,20 +889,20 @@ to the event handler.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchMove_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchMove(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2Ctouches%2CTouchPoint%5B%5D%2CtargetTouches%2CTouchPoint%5B%5D%2CchangedTouches%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchMove_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchMove(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/EventDispatchExtensions/TouchEventDispatchExtensions.cs/#L117">View Source</a>
   </span>
   <a id="Bunit_TouchEventDispatchExtensions_TouchMove_" data-uid="Bunit.TouchEventDispatchExtensions.TouchMove*"></a>
-  <h4 id="Bunit_TouchEventDispatchExtensions_TouchMove_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__" data-uid="Bunit.TouchEventDispatchExtensions.TouchMove(IElement,System.Int64,TouchPoint[],touches,TouchPoint[],targetTouches,TouchPoint[],changedTouches,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.String})">TouchMove(IElement, Int64, TouchPoint[], touches, TouchPoint[], targetTouches, TouchPoint[], changedTouches, Boolean, Boolean, Boolean, Boolean, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_TouchEventDispatchExtensions_TouchMove_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_" data-uid="Bunit.TouchEventDispatchExtensions.TouchMove(IElement,System.Int64,TouchPoint[],TouchPoint[],TouchPoint[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">TouchMove(IElement, Int64, TouchPoint[], TouchPoint[], TouchPoint[], Boolean, Boolean, Boolean, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Raises the <code>@ontouchmove</code> event on <code data-dev-comment-type="paramref" class="paramref">element</code>, passing the provided
 properties to the event handler via a <see cref="!:TouchEventArgs"></see> object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void TouchMove(this IElement element, long detail = null, TouchPoint[], touches  = null, TouchPoint[], targetTouches  = null, TouchPoint[], changedTouches  = null, bool ctrlKey = null, bool shiftKey = null, bool altKey = null, bool metaKey = null, string? type = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void TouchMove(this IElement element, long detail = 0L, TouchPoint[] touches = null, TouchPoint[] targetTouches = null, TouchPoint[] changedTouches = null, bool ctrlKey = false, bool shiftKey = false, bool altKey = false, bool metaKey = false, string type = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -932,33 +928,26 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">touches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">touches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact currently touching the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">targetTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">targetTouches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact that is touching the surface and started on the element that is the target of the current event.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">changedTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">changedTouches</span></td>
+        <td><p>A list of Touches for every point of contact which contributed to the event.
+For the touchstart event this must be a list of the touch points that just became
+active with the current event. For the touchmove event this must be a list of
+the touch points that have moved since the last event. For the touchend and touchcancel
+events this must be a list of the touch points that have just been removed from
+the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -985,7 +974,7 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">type</span></td>
         <td><p>Gets or sets the type of the event.</p>
 </td>
@@ -1082,7 +1071,7 @@ to the event handler.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task that completes when the event handler is done.</p>
 </td>
       </tr>
@@ -1090,20 +1079,20 @@ to the event handler.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchStart_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchStart(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2Ctouches%2CTouchPoint%5B%5D%2CtargetTouches%2CTouchPoint%5B%5D%2CchangedTouches%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/egil/bunit/new/master/apiSpec/new?filename=Bunit_TouchEventDispatchExtensions_TouchStart_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_.md&amp;value=---%0Auid%3A%20Bunit.TouchEventDispatchExtensions.TouchStart(IElement%2CSystem.Int64%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CTouchPoint%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/egil/bunit/blob/master/src/EventDispatchExtensions/TouchEventDispatchExtensions.cs/#L159">View Source</a>
   </span>
   <a id="Bunit_TouchEventDispatchExtensions_TouchStart_" data-uid="Bunit.TouchEventDispatchExtensions.TouchStart*"></a>
-  <h4 id="Bunit_TouchEventDispatchExtensions_TouchStart_IElement_System_Int64_TouchPoint___touches_TouchPoint___targetTouches_TouchPoint___changedTouches_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_String__" data-uid="Bunit.TouchEventDispatchExtensions.TouchStart(IElement,System.Int64,TouchPoint[],touches,TouchPoint[],targetTouches,TouchPoint[],changedTouches,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.String})">TouchStart(IElement, Int64, TouchPoint[], touches, TouchPoint[], targetTouches, TouchPoint[], changedTouches, Boolean, Boolean, Boolean, Boolean, Nullable&lt;String&gt;)</h4>
+  <h4 id="Bunit_TouchEventDispatchExtensions_TouchStart_IElement_System_Int64_TouchPoint___TouchPoint___TouchPoint___System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_String_" data-uid="Bunit.TouchEventDispatchExtensions.TouchStart(IElement,System.Int64,TouchPoint[],TouchPoint[],TouchPoint[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">TouchStart(IElement, Int64, TouchPoint[], TouchPoint[], TouchPoint[], Boolean, Boolean, Boolean, Boolean, String)</h4>
   <div class="markdown level1 summary"><p>Raises the <code>@ontouchstart</code> event on <code data-dev-comment-type="paramref" class="paramref">element</code>, passing the provided
 properties to the event handler via a <see cref="!:TouchEventArgs"></see> object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void TouchStart(this IElement element, long detail = null, TouchPoint[], touches  = null, TouchPoint[], targetTouches  = null, TouchPoint[], changedTouches  = null, bool ctrlKey = null, bool shiftKey = null, bool altKey = null, bool metaKey = null, string? type = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void TouchStart(this IElement element, long detail = 0L, TouchPoint[] touches = null, TouchPoint[] targetTouches = null, TouchPoint[] changedTouches = null, bool ctrlKey = false, bool shiftKey = false, bool altKey = false, bool metaKey = false, string type = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1129,33 +1118,26 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">touches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">touches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact currently touching the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">targetTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">targetTouches</span></td>
+        <td><p>A list of <see cref="!:TouchPoint"></see> for every point of contact that is touching the surface and started on the element that is the target of the current event.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">TouchPoint</span>[]</td>
-        <td><span class="parametername"></span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">changedTouches</span></td>
-        <td><span class="parametername"></span></td>
-        <td></td>
+        <td><span class="parametername">changedTouches</span></td>
+        <td><p>A list of Touches for every point of contact which contributed to the event.
+For the touchstart event this must be a list of the touch points that just became
+active with the current event. For the touchmove event this must be a list of
+the touch points that have moved since the last event. For the touchend and touchcancel
+events this must be a list of the touch points that have just been removed from
+the surface.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -1182,7 +1164,7 @@ properties to the event handler via a <see cref="!:TouchEventArgs"></see> object
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">type</span></td>
         <td><p>Gets or sets the type of the event.</p>
 </td>
@@ -1279,7 +1261,7 @@ to the event handler.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task that completes when the event handler is done.</p>
 </td>
       </tr>
