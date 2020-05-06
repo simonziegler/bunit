@@ -28,9 +28,6 @@ namespace Bunit
 		/// <inheritdoc/>
 		public virtual TestServiceProvider Services { get; }
 
-		/// <inheritdoc/>
-		public IObservable<RenderEvent> RenderEvents => Renderer.RenderEvents;
-
 		/// <summary>
 		/// Creates a new instance of the <see cref="ITestContext"/> class.
 		/// </summary>
@@ -40,28 +37,10 @@ namespace Bunit
 			Services.AddSingleton<ITestRenderer>(srv => new TestRenderer(srv, srv.GetService<ILoggerFactory>() ?? NullLoggerFactory.Instance));
 		}
 
-		#region IDisposable Support
-		private bool _disposed = false;
-
-		/// <inheritdoc/>
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!_disposed)
-			{
-				if (disposing)
-				{
-					Services.Dispose();
-				}
-				_disposed = true;
-			}
-		}
-
 		/// <inheritdoc/>
 		public void Dispose()
 		{
-			Dispose(true);
-			GC.SuppressFinalize(this);
+			Services.Dispose();
 		}
-		#endregion
 	}
 }

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Components;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
+using System.Threading.Tasks;
 
 namespace Bunit.BlazorE2E
 {
@@ -550,7 +551,7 @@ namespace Bunit.BlazorE2E
             );
         }
 
-        [Fact]
+        [Fact()]
         public void CanAcceptSimultaneousRenderRequests()
         {
             var expectedOutput = string.Join(
@@ -567,7 +568,7 @@ namespace Bunit.BlazorE2E
 
             cut.WaitForAssertion(
                 () => Assert.Equal(expectedOutput, outputElement.TextContent.Trim()),
-                timeout: TimeSpan.FromSeconds(2000)
+                timeout: TimeSpan.FromMilliseconds(2000)
             );
         }
 

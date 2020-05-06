@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace Bunit.Rendering.RenderEvents
 {
@@ -62,7 +63,10 @@ namespace Bunit.Rendering.RenderEvents
 		{
 			if (!_forwardEvent(renderEvent))
 				return;
-			foreach (var observer in Observers)
+
+			// Creates a copy of the observers using ToArray because the
+			// Observers list can be modified while its being processed
+			foreach (var observer in Observers.ToArray())
 				observer.OnNext(renderEvent);
 		}
 	}

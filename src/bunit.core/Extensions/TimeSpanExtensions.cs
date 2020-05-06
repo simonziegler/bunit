@@ -18,5 +18,14 @@ namespace Bunit
         {
             return Debugger.IsAttached ? Timeout.InfiniteTimeSpan : timeout ?? TimeSpan.FromSeconds(1);
         }
+
+		/// <summary>
+        /// Returns a timeout time as a <see cref="TimeSpan"/>, set to <see cref="Timeout.InfiniteTimeSpan"/>
+        /// if <see cref="Debugger.IsAttached"/>, or the provided <paramref name="timeout"/>.
+        /// </summary>
+        public static TimeSpan GetRuntimeTimeout(this TimeSpan timeout)
+        {
+            return Debugger.IsAttached ? Timeout.InfiniteTimeSpan : timeout;
+        }
     }
 }

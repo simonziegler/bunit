@@ -11,18 +11,12 @@ namespace Bunit.Rendering
 	/// <summary>
 	/// Represents a generalized Blazor renderer for testing purposes.
 	/// </summary>
-	public interface ITestRenderer
+	public interface ITestRenderer : IRenderEventProducer
 	{
 		/// <summary>
 		/// Gets the <see cref="Dispatcher"/> associated with this <see cref="ITestRenderer"/>.
 		/// </summary>
 		Dispatcher Dispatcher { get; }
-
-		/// <summary>
-		/// Gets an <see cref="IObservable{RenderEvent}"/> which will provide subscribers with <see cref="RenderEvent"/>s from the
-		/// <see cref="ITestRenderer"/> during its life time.
-		/// </summary>
-		IObservable<RenderEvent> RenderEvents { get; }
 
 		/// <summary>
 		/// Dispatches an callback in the context of the renderer synchronously and 

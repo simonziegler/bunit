@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Bunit
 {
@@ -7,21 +7,14 @@ namespace Bunit
     /// </summary>
     public class WaitForStateFailedException : Exception
     {
-        private const string TIMEOUT_NO_RENDER = "The state predicate did not pass before the timeout period passed.";
-        private const string EXCEPTION_IN_PREDICATE = "The state predicate throw an unhandled exception.";
+        internal const string TIMEOUT_BEFORE_PASS = "The state predicate did not pass before the timeout period passed.";
+        internal const string EXCEPTION_IN_PREDICATE = "The state predicate throw an unhandled exception.";
 
-        private WaitForStateFailedException() : base(TIMEOUT_NO_RENDER, new TimeoutException(TIMEOUT_NO_RENDER))
+		/// <summary>
+		/// Creates an instance of the <see cref="WaitForStateFailedException"/>.
+		/// </summary>
+        public WaitForStateFailedException(string errorMessage, Exception? innerException = null) : base(errorMessage, innerException)
         {
         }
-
-        private WaitForStateFailedException(Exception innerException) : base(EXCEPTION_IN_PREDICATE, innerException)
-        {
-        }
-
-        internal static WaitForStateFailedException CreateNoMatchBeforeTimeout()
-            => new WaitForStateFailedException();
-
-        internal static WaitForStateFailedException CreatePredicateThrowException(Exception innerException)
-            => new WaitForStateFailedException(innerException);
     }
 }

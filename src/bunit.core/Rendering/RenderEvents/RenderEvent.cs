@@ -31,7 +31,57 @@ namespace Bunit.Rendering.RenderEvents
 		/// </summary>
 		/// <param name="componentId">Id of component to check for updates to.</param>
 		/// <returns>True if <see cref="RenderEvent"/> contains updates to component, false otherwise.</returns>
-		public bool HasChangesTo(int componentId) => HasChangesToRoot(componentId);
+		public bool HasChangesTo(int componentId)
+		{
+			return HasChangesToRoot(componentId);
+
+			bool HasChangesToRoot(int componentId)
+			{
+				for (var i = 0; i < _renderBatch.UpdatedComponents.Count; i++)
+				{
+					ref var update = ref _renderBatch.UpdatedComponents.Array[i];
+					if (update.ComponentId == componentId && update.Edits.Count > 0)
+						return true;
+				}
+				//for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
+				//{
+				//	if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
+				//		return true;
+				//}
+
+				var renderFrames = _renderer.GetCurrentRenderTreeFrames(componentId);
+				return HasChangedToChildren(renderFrames);
+			}
+
+			bool HasChangedToChildren(ArrayRange<RenderTreeFrame> componentRenderTreeFrames)
+			{
+				for (var i = 0; i < componentRenderTreeFrames.Count; i++)
+				{
+					ref var frame = ref componentRenderTreeFrames.Array[i];
+					if (frame.FrameType == RenderTreeFrameType.Component)
+						if (HasChangesToRoot(frame.ComponentId))
+							return true;
+				}
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Checks whether the a component with <paramref name="componentId"/> or one or more of 
+		/// its sub components was changed during the <see cref="RenderEvent"/>.
+		/// </summary>
+		/// <param name="componentId">Id of component to check for updates to.</param>
+		/// <returns>True if <see cref="RenderEvent"/> contains updates to component, false otherwise.</returns>
+		public bool HasDiposedComponent(int componentId)
+		{
+			for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
+			{
+				if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
+					return true;
+			}
+
+			return false;
+		}
 
 		/// <summary>
 		/// Checks whether the a component with <paramref name="componentId"/> or one or more of 
@@ -39,60 +89,35 @@ namespace Bunit.Rendering.RenderEvents
 		/// </summary>
 		/// <param name="componentId">Id of component to check if rendered.</param>
 		/// <returns>True if the component or a sub component rendered, false otherwise.</returns>
-		public bool DidComponentRender(int componentId) => DidComponentRenderRoot(componentId);
-
-		private bool HasChangesToRoot(int componentId)
+		public bool DidComponentRender(int componentId)
 		{
-			for (var i = 0; i < _renderBatch.UpdatedComponents.Count; i++)
-			{
-				var update = _renderBatch.UpdatedComponents.Array[i];
-				if (update.ComponentId == componentId && update.Edits.Count > 0)
-					return true;
-			}
-			for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
-				if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
-					return true;
+			return DidComponentRenderRoot(componentId);
 
-			var renderFrames = _renderer.GetCurrentRenderTreeFrames(componentId);
-			return HasChangedToChildren(renderFrames);
-		}
-
-		private bool HasChangedToChildren(ArrayRange<RenderTreeFrame> componentRenderTreeFrames)
-		{
-			for (var i = 0; i < componentRenderTreeFrames.Count; i++)
+			bool DidComponentRenderRoot(int componentId)
 			{
-				var frame = componentRenderTreeFrames.Array[i];
-				if (frame.FrameType == RenderTreeFrameType.Component)
-					if (HasChangesToRoot(frame.ComponentId))
+				for (var i = 0; i < _renderBatch.UpdatedComponents.Count; i++)
+				{
+					ref var update = ref _renderBatch.UpdatedComponents.Array[i];
+					if (update.ComponentId == componentId)
 						return true;
-			}
-			return false;
-		}
-
-		private bool DidComponentRenderRoot(int componentId)
-		{
-			for (var i = 0; i < _renderBatch.UpdatedComponents.Count; i++)
-			{
-				var update = _renderBatch.UpdatedComponents.Array[i];
-				if (update.ComponentId == componentId)
-					return true;
-			}
-			for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
-				if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
-					return true;
-			return DidChildComponentRender(_renderer.GetCurrentRenderTreeFrames(componentId));
-		}
-
-		private bool DidChildComponentRender(ArrayRange<RenderTreeFrame> componentRenderTreeFrames)
-		{
-			for (var i = 0; i < componentRenderTreeFrames.Count; i++)
-			{
-				var frame = componentRenderTreeFrames.Array[i];
-				if (frame.FrameType == RenderTreeFrameType.Component)
-					if (DidComponentRenderRoot(frame.ComponentId))
+				}
+				for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
+					if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
 						return true;
+				return DidChildComponentRender(_renderer.GetCurrentRenderTreeFrames(componentId));
 			}
-			return false;
+
+			bool DidChildComponentRender(ArrayRange<RenderTreeFrame> componentRenderTreeFrames)
+			{
+				for (var i = 0; i < componentRenderTreeFrames.Count; i++)
+				{
+					ref var frame = ref componentRenderTreeFrames.Array[i];
+					if (frame.FrameType == RenderTreeFrameType.Component)
+						if (DidComponentRenderRoot(frame.ComponentId))
+							return true;
+				}
+				return false;
+			}
 		}
 	}
 }

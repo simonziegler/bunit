@@ -127,34 +127,34 @@ namespace Bunit
             cuts[1].Instance.Header.ShouldBe("Second");
         }
 
-        [Fact(DisplayName = "Render events for non-rendered sub components are not emitted")]
-        public void Test010()
-        {
-            var renderSub = new ConcurrentRenderEventSubscriber(RenderEvents);
-            var wrapper = RenderComponent<TwoComponentWrapper>(
-                RenderFragment<Simple1>(nameof(TwoComponentWrapper.First)),
-                RenderFragment<Simple1>(nameof(TwoComponentWrapper.Second))
-            );
-            var cuts = wrapper.FindComponents<Simple1>();
-            var wrapperSub = new ConcurrentRenderEventSubscriber(wrapper.RenderEvents);
-            var cutSub1 = new ConcurrentRenderEventSubscriber(cuts[0].RenderEvents);
-            var cutSub2 = new ConcurrentRenderEventSubscriber(cuts[1].RenderEvents);
+        //[Fact(DisplayName = "Render events for non-rendered sub components are not emitted")]
+        //public void Test010()
+        //{
+        //    var renderSub = new ConcurrentRenderEventSubscriber(RenderEvents);
+        //    var wrapper = RenderComponent<TwoComponentWrapper>(
+        //        RenderFragment<Simple1>(nameof(TwoComponentWrapper.First)),
+        //        RenderFragment<Simple1>(nameof(TwoComponentWrapper.Second))
+        //    );
+        //    var cuts = wrapper.FindComponents<Simple1>();
+        //    var wrapperSub = new ConcurrentRenderEventSubscriber(wrapper.RenderEvents);
+        //    var cutSub1 = new ConcurrentRenderEventSubscriber(cuts[0].RenderEvents);
+        //    var cutSub2 = new ConcurrentRenderEventSubscriber(cuts[1].RenderEvents);
 
-            renderSub.RenderCount.ShouldBe(1);
+        //    renderSub.RenderCount.ShouldBe(1);
 
-            cuts[0].Render();
+        //    cuts[0].Render();
 
-            renderSub.RenderCount.ShouldBe(2);
-            wrapperSub.RenderCount.ShouldBe(1);
-            cutSub1.RenderCount.ShouldBe(1);
-            cutSub2.RenderCount.ShouldBe(0);
+        //    renderSub.RenderCount.ShouldBe(2);
+        //    wrapperSub.RenderCount.ShouldBe(1);
+        //    cutSub1.RenderCount.ShouldBe(1);
+        //    cutSub2.RenderCount.ShouldBe(0);
 
-            cuts[1].Render();
+        //    cuts[1].Render();
 
-            renderSub.RenderCount.ShouldBe(3);
-            wrapperSub.RenderCount.ShouldBe(2);
-            cutSub1.RenderCount.ShouldBe(1);
-            cutSub2.RenderCount.ShouldBe(1);
-        }
+        //    renderSub.RenderCount.ShouldBe(3);
+        //    wrapperSub.RenderCount.ShouldBe(2);
+        //    cutSub1.RenderCount.ShouldBe(1);
+        //    cutSub2.RenderCount.ShouldBe(1);
+        //}
     }
 }

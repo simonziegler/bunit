@@ -8,16 +8,18 @@ namespace Bunit.Rendering.RenderEvents
 	/// </summary>
 	public class RenderEventObservable : IObservable<RenderEvent>
 	{
+		private readonly HashSet<IObserver<RenderEvent>> _observers = new HashSet<IObserver<RenderEvent>>();
+
 		/// <summary>
 		/// Gets the observers currently subscribed to the observable.
 		/// </summary>
-		protected HashSet<IObserver<RenderEvent>> Observers { get; } = new HashSet<IObserver<RenderEvent>>();
+		protected HashSet<IObserver<RenderEvent>> Observers => _observers;
 
 		/// <inheritdoc/>
 		public virtual IDisposable Subscribe(IObserver<RenderEvent> observer)
 		{
-			if (!Observers.Contains(observer))
-				Observers.Add(observer);
+			if (!_observers.Contains(observer))
+				_observers.Add(observer);
 			return new Unsubscriber(this, observer);
 		}
 
@@ -27,7 +29,7 @@ namespace Bunit.Rendering.RenderEvents
 		/// <param name="observer">Observer to remove.</param>
 		protected virtual void RemoveSubscription(IObserver<RenderEvent> observer)
 		{
-			Observers.Remove(observer);
+			_observers.Remove(observer);
 		}
 
 		private sealed class Unsubscriber : IDisposable

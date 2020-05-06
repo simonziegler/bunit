@@ -42,7 +42,7 @@ namespace Bunit
             var context = new HtmlRenderingContext(renderer);
             var newPosition = RenderFrames(context, frames, 0, frames.Count);
 			// Can be false in certain circumstances. Perhaps because component has been disposed?
-			Debug.Assert(newPosition == frames.Count); 
+			Debug.Assert(newPosition == frames.Count, $"frames.Count = {frames.Count}. newPosition = {newPosition}"); 
             return string.Join(string.Empty, context.Result);
         }
 
@@ -164,7 +164,7 @@ namespace Bunit
                     result.Add(frame.ElementName);
                     result.Add(">");
                 }
-                Debug.Assert(afterAttributes == position + frame.ElementSubtreeLength);
+                Debug.Assert(afterAttributes == position + frame.ElementSubtreeLength, $"afterAttributes = {afterAttributes}. position = {position}. frame.ElementSubtreeLength = {frame.ElementSubtreeLength}");
                 return afterAttributes;
             }
         }
