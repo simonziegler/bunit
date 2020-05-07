@@ -7,7 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Bunit
 {
-
+	/// <summary>
+	/// Represents an async wait helper, that will wait for a specified time for an assertion to pass.
+	/// </summary>
 	public class WaitForAssertionHelper : IDisposable
 	{
 		private readonly IRenderedFragmentBase _renderedFragment;
@@ -18,15 +20,30 @@ namespace Bunit
 		private bool _disposed = false;
 		private Exception? _capturedException;
 
+		/// <summary>
+		/// Gets the task that will complete successfully if the assertion passed before the timeout was reached.
+		/// The task will complete with an <see cref="WaitForAssertionFailedException"/> exception if the timeout was reached without the assertion passing,
+		/// and will have the assertion exception as its InnerException.
+		/// </summary>
 		public Task WaitTask => _completionSouce.Task;
 
+		/// <summary>
+		/// Creates an instance of the <see cref="WaitForAssertionHelper"/> type,
+		/// which will until the provided <paramref name="assertion"/> passes (i.e. does not throw an 
+		/// exception), or the <paramref name="timeout"/> is reached (default is one second).
+		/// 
+		/// The <paramref name="assertion"/> is attempted initially, and then each time the <paramref name="renderedFragment"/> renders.
+		/// </summary>
+		/// <param name="renderedFragment">The rendered fragment to wait for renders from and assert against.</param>
+		/// <param name="assertion">The verification or assertion to perform.</param>
+		/// <param name="timeout">The maximum time to attempt the verification.</param>
 		public WaitForAssertionHelper(IRenderedFragmentBase renderedFragment, Action assertion, TimeSpan? timeout = null)
 		{
 			_logger = GetLogger<WaitForAssertionHelper>(renderedFragment.Services);
 			_completionSouce = new TaskCompletionSource<object?>();
 			_renderedFragment = renderedFragment;
 			_assertion = assertion;
-			_timer = new Timer(HandleTimeout, this, timeout.GetRuntimeTimeout(), TimeSpan.FromMilliseconds(Timeout.Infinite));
+			_timer = new Timer(HandleTimeout, this, timeout.GetRuntimeTimeout(), Timeout.InfiniteTimeSpan);
 			_renderedFragment.OnAfterRender += TryAssertion;
 			TryAssertion();
 		}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using AngleSharp.Diffing.Core;
 using AngleSharp.Dom;
@@ -17,11 +18,13 @@ namespace Bunit
 	/// </summary>
 	public class RenderedFragment : IRenderedFragment, IRenderEventHandler
 	{
+		private readonly object _lock = new object();
 		private readonly ILogger<RenderedFragment> _logger;
 		private string? _snapshotMarkup;
 		private INodeList? _firstRenderNodes;
 		private INodeList? _latestRenderNodes;
-		private INodeList? _snapshotNodes;		
+		private INodeList? _snapshotNodes;
+		private string _markup;
 
 		private HtmlParser HtmlParser { get; }
 
@@ -42,16 +45,32 @@ namespace Bunit
 		public int ComponentId { get; }
 
 		/// <inheritdoc/>
-		public string Markup { get; private set; }
+		public string Markup
+		{
+			get
+			{
+				lock (_lock)
+				{
+					return Volatile.Read(ref _markup);
+				}
+			}
+		}
 
 		/// <inheritdoc/>
 		public INodeList Nodes
 		{
 			get
 			{
-				if (_latestRenderNodes is null)
-					_latestRenderNodes = HtmlParser.Parse(Markup);
-				return _latestRenderNodes;
+				lock (_lock)
+				{
+					var result = Volatile.Read(ref _latestRenderNodes);
+					if (result is null)
+					{
+						result = HtmlParser.Parse(Markup);
+						Volatile.Write(ref _latestRenderNodes, result);
+					}
+					return result;
+				}
 			}
 		}
 
@@ -77,8 +96,8 @@ namespace Bunit
 			HtmlParser = services.GetRequiredService<HtmlParser>();
 			Renderer = services.GetRequiredService<ITestRenderer>();
 			ComponentId = componentId;
-			Markup = RetrieveLatestMarkupFromRenderer();
-			FirstRenderMarkup = Markup;
+			_markup = RetrieveLatestMarkupFromRenderer();
+			FirstRenderMarkup = _markup;
 			Renderer.AddRenderEventHandler(this);
 			RenderCount = 1;
 		}
@@ -149,14 +168,18 @@ namespace Bunit
 			{
 				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the markup of component {ComponentId} changed.");
 
-				Markup = RetrieveLatestMarkupFromRenderer();
-				_latestRenderNodes = null;
+				// The lock ensures that latest nodes is always based on the latest rendered markup.
+				lock (_lock)
+				{
+					Volatile.Write(ref _latestRenderNodes, null);
+					Volatile.Write(ref _markup, RetrieveLatestMarkupFromRenderer());
+				}
 
 				OnMarkupUpdated?.Invoke();
 			}
 			else if (renderEvent.HasDiposedComponent(ComponentId))
 			{
-				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the component {ComponentId} was disposed.");				
+				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the component {ComponentId} was disposed.");
 				Renderer.RemoveRenderEventHandler(this);
 			}
 		}

@@ -22,68 +22,6 @@ namespace Bunit.Rendering
 			_testOutput = testOutput;
 		}
 
-		[Fact(DisplayName = "Nodes should return new instance when " +
-							"async operation during OnInit causes component to re-render")]
-		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		public void Test003()
-		{
-			var testData = new AsyncNameDep();
-			Services.AddSingleton<IAsyncTestDep>(testData);
-			var cut = RenderComponent<SimpleWithAyncDeps>();
-			var initialValue = cut.Nodes.QuerySelector("p").TextContent;
-			var expectedValue = "Foo Bar Baz";
-
-			WaitForNextRender(() => testData.SetResult(expectedValue));
-
-			var steveValue = cut.Nodes.QuerySelector("p").TextContent;
-			steveValue.ShouldNotBe(initialValue);
-			steveValue.ShouldBe(expectedValue);
-		}
-
-		[Fact(DisplayName = "Nodes should return new instance when " +
-					"async operation/StateHasChanged during OnAfterRender causes component to re-render")]
-		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		public void Test004()
-		{
-			var invocation = Services.AddMockJsRuntime().Setup<string>("getdata");
-			var cut = RenderComponent<SimpleWithJsRuntimeDep>();
-			var initialValue = cut.Nodes.QuerySelector("p").OuterHtml;
-
-			WaitForNextRender(() => invocation.SetResult("NEW DATA"));
-
-			var steveValue = cut.Nodes.QuerySelector("p").OuterHtml;
-			steveValue.ShouldNotBe(initialValue);
-		}
-
-		[Fact(DisplayName = "Nodes on a components with child component returns " +
-							"new instance when the child component has changes")]
-		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		public void Test005()
-		{
-			var invocation = Services.AddMockJsRuntime().Setup<string>("getdata");
-			var notcut = RenderComponent<Wrapper>(ChildContent<Simple1>());
-			var cut = RenderComponent<Wrapper>(ChildContent<SimpleWithJsRuntimeDep>());
-			var initialValue = cut.Nodes;
-
-			WaitForNextRender(() => invocation.SetResult("NEW DATA"), TimeSpan.FromSeconds(2));
-
-			Assert.NotSame(initialValue, cut.Nodes);
-		}
-
-		[Fact(DisplayName = "WaitForRender throws WaitForRenderFailedException when a render does not happen within the timeout period")]
-		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		public void Test006()
-		{
-			const string expectedMessage = "No render happened before the timeout period passed.";
-			var cut = RenderComponent<Simple1>();
-
-			var expected = Should.Throw<WaitForRenderFailedException>(() =>
-				WaitForNextRender(timeout: TimeSpan.FromMilliseconds(10))
-			);
-
-			expected.Message.ShouldBe(expectedMessage);
-		}
-
 		[Fact(DisplayName = "WaitForAssertion can wait for multiple renders and changes to occur")]
 		public void Test110()
 		{
@@ -131,10 +69,10 @@ namespace Bunit.Rendering
 			expected.Message.ShouldBe(expectedMessage);
 		}
 
-		[Fact(DisplayName = "WaitForState throws WaitForRenderFailedException exception if statePredicate throws on a later render", Skip = "WRONG EXCEPTION FIX")]
+		[Fact(DisplayName = "WaitForState throws WaitForStateFailedException exception if statePredicate throws on a later render")]
 		public void Test013()
 		{
-			const string expectedMessage = "The state predicate throw an unhandled exception.";
+			const string expectedMessage = "The state predicate did not pass before the timeout period passed.";
 			const string expectedInnerMessage = "INNER MESSAGE";
 			var cut = RenderComponent<TwoRendersTwoChanges>();
 			cut.Find("#tick").Click();
@@ -157,32 +95,21 @@ namespace Bunit.Rendering
 		[Fact(DisplayName = "WaitForState can wait for multiple renders and changes to occur")]
 		public void Test100()
 		{
-			_testOutput.WriteLine($"INIT TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
-
 			// Initial state is stopped
 			var cut = RenderComponent<TwoRendersTwoChanges>();
-
-			_testOutput.WriteLine($"COM-RENDERED TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
-
 			var stateElement = cut.Find("#state");
 			stateElement.TextContent.ShouldBe("Stopped");
 
 			// Clicking 'tick' changes the state, and starts a task
-			_testOutput.WriteLine($"CLICK #1 TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
 			cut.Find("#tick").Click();
 			cut.Find("#state").TextContent.ShouldBe("Started");
 
 			// Clicking 'tock' completes the task, which updates the state
 			// This click causes two renders, thus something is needed to await here.
-			_testOutput.WriteLine($"CLICK #2 TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
 			cut.Find("#tock").Click();
-
-			_testOutput.WriteLine($"BEFORE WAIT FOR STATE TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
 			cut.WaitForState(() => cut.Find("#state").TextContent == "Stopped");
-			_testOutput.WriteLine($"AFTER WAIT FOR STATE TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
 
 			cut.Find("#state").TextContent.ShouldBe("Stopped");
-			_testOutput.WriteLine($"END TEST100: {Thread.GetCurrentProcessorId()} - {Thread.CurrentThread.ManagedThreadId}");
 		}
 	}
 }

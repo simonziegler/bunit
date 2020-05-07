@@ -10,11 +10,6 @@ namespace Bunit
 	public partial interface ITestContext : IDisposable
 	{
 		/// <summary>
-		/// Adds or removes an event handler that will be triggered after each render by the <see cref="Renderer"/>.
-		/// </summary>
-		event Action OnAfterRender;
-
-		/// <summary>
 		/// Gets the renderer used by the test context.
 		/// </summary>
 		ITestRenderer Renderer { get; }
