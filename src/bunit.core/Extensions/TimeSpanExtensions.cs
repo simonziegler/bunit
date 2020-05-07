@@ -16,7 +16,8 @@ namespace Bunit
         /// </summary>
         public static TimeSpan GetRuntimeTimeout(this TimeSpan? timeout)
         {
-            return Debugger.IsAttached ? Timeout.InfiniteTimeSpan : timeout ?? TimeSpan.FromSeconds(1);
+            //return Debugger.IsAttached ? Timeout.InfiniteTimeSpan : timeout ?? TimeSpan.FromSeconds(1);
+			return timeout ?? TimeSpan.FromSeconds(1);
         }
 
 		/// <summary>

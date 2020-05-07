@@ -18,13 +18,10 @@ namespace Bunit
 	public class RenderedFragment : IRenderedFragment, IRenderEventHandler
 	{
 		private readonly ILogger<RenderedFragment> _logger;
-		private TaskCompletionSource<int>? _nextUpdate;
 		private string? _snapshotMarkup;
 		private INodeList? _firstRenderNodes;
 		private INodeList? _latestRenderNodes;
-		private INodeList? _snapshotNodes;
-
-		private bool disposedInRenderer = false;
+		private INodeList? _snapshotNodes;		
 
 		private HtmlParser HtmlParser { get; }
 
@@ -61,18 +58,8 @@ namespace Bunit
 		/// <inheritdoc/>
 		public event Action? OnMarkupUpdated;
 
-		public event Action? OnAfterRender;
-
 		/// <inheritdoc/>
-		public Task<int> NextRender
-		{
-			get
-			{
-				if (_nextUpdate is null)
-					_nextUpdate = new TaskCompletionSource<int>();
-				return _nextUpdate.Task;
-			}
-		}
+		public event Action? OnAfterRender;
 
 		/// <inheritdoc/>
 		public int RenderCount { get; private set; }
@@ -152,11 +139,6 @@ namespace Bunit
 
 				//// Then it is safe to tell anybody waiting on updates or changes to the rendered fragment
 				//// that they can redo their assertions or continue processing.
-				//if (_nextUpdate is { } thisUpdate)
-				//{
-				//	_nextUpdate = new TaskCompletionSource<int>();
-				//	thisUpdate.SetResult(RenderCount);
-				//}
 				OnAfterRender?.Invoke();
 			}
 		}
@@ -174,8 +156,7 @@ namespace Bunit
 			}
 			else if (renderEvent.HasDiposedComponent(ComponentId))
 			{
-				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the component {ComponentId} was disposed.");
-				disposedInRenderer = true; // TODO: TEST THIS
+				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the component {ComponentId} was disposed.");				
 				Renderer.RemoveRenderEventHandler(this);
 			}
 		}

@@ -22,67 +22,67 @@ namespace Bunit.Rendering
 			_testOutput = testOutput;
 		}
 
-		//[Fact(DisplayName = "Nodes should return new instance when " +
-		//				    "async operation during OnInit causes component to re-render")]
-		//[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		//public void Test003()
-		//{
-		//	var testData = new AsyncNameDep();
-		//	Services.AddSingleton<IAsyncTestDep>(testData);
-		//	var cut = RenderComponent<SimpleWithAyncDeps>();
-		//	var initialValue = cut.Nodes.QuerySelector("p").TextContent;
-		//	var expectedValue = "Foo Bar Baz";
+		[Fact(DisplayName = "Nodes should return new instance when " +
+							"async operation during OnInit causes component to re-render")]
+		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
+		public void Test003()
+		{
+			var testData = new AsyncNameDep();
+			Services.AddSingleton<IAsyncTestDep>(testData);
+			var cut = RenderComponent<SimpleWithAyncDeps>();
+			var initialValue = cut.Nodes.QuerySelector("p").TextContent;
+			var expectedValue = "Foo Bar Baz";
 
-		//	WaitForNextRender(() => testData.SetResult(expectedValue));
+			WaitForNextRender(() => testData.SetResult(expectedValue));
 
-		//	var steveValue = cut.Nodes.QuerySelector("p").TextContent;
-		//	steveValue.ShouldNotBe(initialValue);
-		//	steveValue.ShouldBe(expectedValue);
-		//}
+			var steveValue = cut.Nodes.QuerySelector("p").TextContent;
+			steveValue.ShouldNotBe(initialValue);
+			steveValue.ShouldBe(expectedValue);
+		}
 
-		//[Fact(DisplayName = "Nodes should return new instance when " +
-		//			"async operation/StateHasChanged during OnAfterRender causes component to re-render")]
-		//[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		//public void Test004()
-		//{
-		//	var invocation = Services.AddMockJsRuntime().Setup<string>("getdata");
-		//	var cut = RenderComponent<SimpleWithJsRuntimeDep>();
-		//	var initialValue = cut.Nodes.QuerySelector("p").OuterHtml;
+		[Fact(DisplayName = "Nodes should return new instance when " +
+					"async operation/StateHasChanged during OnAfterRender causes component to re-render")]
+		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
+		public void Test004()
+		{
+			var invocation = Services.AddMockJsRuntime().Setup<string>("getdata");
+			var cut = RenderComponent<SimpleWithJsRuntimeDep>();
+			var initialValue = cut.Nodes.QuerySelector("p").OuterHtml;
 
-		//	WaitForNextRender(() => invocation.SetResult("NEW DATA"));
+			WaitForNextRender(() => invocation.SetResult("NEW DATA"));
 
-		//	var steveValue = cut.Nodes.QuerySelector("p").OuterHtml;
-		//	steveValue.ShouldNotBe(initialValue);
-		//}
+			var steveValue = cut.Nodes.QuerySelector("p").OuterHtml;
+			steveValue.ShouldNotBe(initialValue);
+		}
 
-		//[Fact(DisplayName = "Nodes on a components with child component returns " +
-		//					"new instance when the child component has changes")]
-		//[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		//public void Test005()
-		//{
-		//	var invocation = Services.AddMockJsRuntime().Setup<string>("getdata");
-		//	var notcut = RenderComponent<Wrapper>(ChildContent<Simple1>());
-		//	var cut = RenderComponent<Wrapper>(ChildContent<SimpleWithJsRuntimeDep>());
-		//	var initialValue = cut.Nodes;
+		[Fact(DisplayName = "Nodes on a components with child component returns " +
+							"new instance when the child component has changes")]
+		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
+		public void Test005()
+		{
+			var invocation = Services.AddMockJsRuntime().Setup<string>("getdata");
+			var notcut = RenderComponent<Wrapper>(ChildContent<Simple1>());
+			var cut = RenderComponent<Wrapper>(ChildContent<SimpleWithJsRuntimeDep>());
+			var initialValue = cut.Nodes;
 
-		//	WaitForNextRender(() => invocation.SetResult("NEW DATA"), TimeSpan.FromSeconds(2));
+			WaitForNextRender(() => invocation.SetResult("NEW DATA"), TimeSpan.FromSeconds(2));
 
-		//	Assert.NotSame(initialValue, cut.Nodes);
-		//}
+			Assert.NotSame(initialValue, cut.Nodes);
+		}
 
-		//[Fact(DisplayName = "WaitForRender throws WaitForRenderFailedException when a render does not happen within the timeout period")]
-		//[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
-		//public void Test006()
-		//{
-		//	const string expectedMessage = "No render happened before the timeout period passed.";
-		//	var cut = RenderComponent<Simple1>();
+		[Fact(DisplayName = "WaitForRender throws WaitForRenderFailedException when a render does not happen within the timeout period")]
+		[Obsolete("Calls to WaitForNextRender is obsolete, but still needs tests")]
+		public void Test006()
+		{
+			const string expectedMessage = "No render happened before the timeout period passed.";
+			var cut = RenderComponent<Simple1>();
 
-		//	var expected = Should.Throw<WaitForRenderFailedException>(() =>
-		//		WaitForNextRender(timeout: TimeSpan.FromMilliseconds(10))
-		//	);
+			var expected = Should.Throw<WaitForRenderFailedException>(() =>
+				WaitForNextRender(timeout: TimeSpan.FromMilliseconds(10))
+			);
 
-		//	expected.Message.ShouldBe(expectedMessage);
-		//}
+			expected.Message.ShouldBe(expectedMessage);
+		}
 
 		[Fact(DisplayName = "WaitForAssertion can wait for multiple renders and changes to occur")]
 		public void Test110()
@@ -129,8 +129,6 @@ namespace Bunit.Rendering
 			);
 
 			expected.Message.ShouldBe(expectedMessage);
-			expected.InnerException.ShouldBeOfType<TimeoutException>()
-				.Message.ShouldBe(expectedMessage);
 		}
 
 		[Fact(DisplayName = "WaitForState throws WaitForRenderFailedException exception if statePredicate throws on a later render", Skip = "WRONG EXCEPTION FIX")]

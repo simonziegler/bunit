@@ -16,6 +16,11 @@ namespace Bunit
 		string Markup { get; }
 
 		/// <summary>
+		/// An event that is raised after the markup of the <see cref="IRenderedFragmentBase"/> is updated.
+		/// </summary>
+		event Action OnMarkupUpdated;
+
+		/// <summary>
 		/// Gets the AngleSharp <see cref="INodeList"/> based
 		/// on the HTML markup from the rendered fragment/component.
 		/// </summary>
