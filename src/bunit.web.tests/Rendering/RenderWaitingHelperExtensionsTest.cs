@@ -111,5 +111,23 @@ namespace Bunit.Rendering
 
 			cut.Find("#state").TextContent.ShouldBe("Stopped");
 		}
+
+		[Fact(DisplayName = "WaitForState can detect async changes to properties in the CUT")]
+		public void Test200()
+		{
+			var cut = RenderComponent<AsyncRenderChangesProperty>();
+			cut.Instance.Counter.ShouldBe(0);
+
+			// Clicking 'tick' changes the counter, and starts a task
+			cut.Find("#tick").Click();
+			cut.Instance.Counter.ShouldBe(1);
+
+			// Clicking 'tock' completes the task, which updates the counter
+			// This click causes two renders, thus something is needed to await here.
+			cut.Find("#tock").Click();
+			cut.WaitForState(() => cut.Instance.Counter == 2);
+
+			cut.Instance.Counter.ShouldBe(2);
+		}
 	}
 }

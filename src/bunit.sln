@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{A5D7B605-02D8-468C-9BDF-864CF93B12F9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{A5D7B605-02D8-468C-9BDF-864CF93B12F9}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		..\CHANGELOG.md = ..\CHANGELOG.md
@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{8606217F-762
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xunit", "xunit", "{679F372E-AB97-4AA3-8400-6EC870555B28}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{785D7644-18F2-45E4-9B30-016ADB7AB9E3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{785D7644-18F2-45E4-9B30-016ADB7AB9E3}"
 	ProjectSection(SolutionItems) = preProject
 		..\.github\workflows\CI-CD-Docs.yml = ..\.github\workflows\CI-CD-Docs.yml
 		..\.github\workflows\CI.yml = ..\.github\workflows\CI.yml
