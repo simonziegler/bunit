@@ -1,8 +1,11 @@
 using System;
 using System.Threading.Tasks;
+
 using Bunit.Rendering;
+
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
+
 using EC = Microsoft.AspNetCore.Components.EventCallback;
 
 namespace Bunit

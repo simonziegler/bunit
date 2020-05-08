@@ -1,7 +1,9 @@
+using System;
+
 using Bunit.Extensions;
 using Bunit.Rendering;
+
 using Microsoft.AspNetCore.Components;
-using System;
 
 namespace Bunit
 {

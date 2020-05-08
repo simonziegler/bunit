@@ -5,7 +5,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Components;
+
 using EC = Microsoft.AspNetCore.Components.EventCallback;
 
 namespace Bunit.Rendering

@@ -1,4 +1,5 @@
 using System;
+
 using Bunit.Rendering;
 
 namespace Bunit

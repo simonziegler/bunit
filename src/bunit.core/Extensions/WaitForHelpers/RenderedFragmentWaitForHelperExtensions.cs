@@ -1,4 +1,5 @@
 using System;
+
 using Bunit.Extensions.WaitForHelpers;
 
 namespace Bunit
