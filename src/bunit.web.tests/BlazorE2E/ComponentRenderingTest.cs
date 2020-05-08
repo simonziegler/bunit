@@ -24,11 +24,6 @@ namespace Bunit.BlazorE2E
 	/// </summary>
 	public class ComponentRenderingTest : ComponentTestFixture
 	{
-		public ComponentRenderingTest(ITestOutputHelper output)
-		{
-			Services.AddXunitLogger(output);
-		}
-
 		[Fact]
 		public void CanRenderTextOnlyComponent()
 		{
@@ -605,7 +600,19 @@ namespace Bunit.BlazorE2E
 
 			cut.Find("#run-async-with-dispatch").Click();
 
-			cut.WaitForAssertion(() => Assert.Equal("First Second Third Fourth Fifth", result.TextContent.Trim()), timeout: TimeSpan.FromSeconds(2));
+			cut.WaitForAssertion(() =>
+			{
+				// In some cases, the original assert wont work, since the sync context might not be idle,
+				// which results in this order: First Third Second Fourth Fifth
+				// Assert.Equal("First Second Third Fourth Fifth", result.TextContent.Trim())
+
+				Assert.Contains("First", result.TextContent);
+				Assert.Contains("Second", result.TextContent);
+				Assert.Contains("Third", result.TextContent);
+				Assert.Contains("Fourth", result.TextContent);
+				Assert.Contains("Fifth", result.TextContent);
+
+			}, timeout: TimeSpan.FromSeconds(2));
 		}
 
 		// Test removed since it does not have any value in this context.

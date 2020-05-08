@@ -1,7 +1,5 @@
 using System;
 using System.Threading.Tasks;
-
-using Bunit.Rendering;
 using Bunit.TestAssets.SampleComponents;
 
 using Microsoft.AspNetCore.Components;

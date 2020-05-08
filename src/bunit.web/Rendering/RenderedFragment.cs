@@ -8,12 +8,11 @@ using AngleSharp.Dom;
 
 using Bunit.Diffing;
 using Bunit.Extensions;
-using Bunit.Rendering;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Bunit
+namespace Bunit.Rendering
 {
 	/// <summary>
 	/// Represents an abstract <see cref="IRenderedFragment"/> with base functionality.
@@ -154,9 +153,8 @@ namespace Bunit
 				// that the markup has changed and they should rerun their queries.
 				HandleChangesToMarkup(renderEvent);
 
-
-				//// Then it is safe to tell anybody waiting on updates or changes to the rendered fragment
-				//// that they can redo their assertions or continue processing.
+				// Then it is safe to tell anybody waiting on updates or changes to the rendered fragment
+				// that they can redo their assertions or continue processing.
 				OnAfterRender?.Invoke();
 			}
 		}

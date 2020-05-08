@@ -4,8 +4,7 @@ using AngleSharpWrappers;
 
 namespace Bunit
 {
-	internal sealed class ElementFactory<TElement> : IElementFactory<TElement>
-		where TElement : class, IElement
+	internal sealed class ElementFactory<TElement> : IElementFactory<TElement> where TElement : class, IElement
 	{
 		private readonly IRenderedFragment _testTarget;
 		private readonly string _cssSelector;

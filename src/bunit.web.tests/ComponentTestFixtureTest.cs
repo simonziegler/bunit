@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 
 using Bunit.Mocking.JSInterop;
+using Bunit.Rendering;
 using Bunit.TestAssets.SampleComponents;
 
 using Shouldly;
