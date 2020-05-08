@@ -1,7 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using Bunit.Rendering;
-using Bunit.Rendering.RenderEvents;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using EC = Microsoft.AspNetCore.Components.EventCallback;

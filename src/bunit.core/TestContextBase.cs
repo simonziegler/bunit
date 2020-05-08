@@ -1,5 +1,4 @@
 using Bunit.Rendering;
-using Bunit.Rendering.RenderEvents;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -11,12 +10,9 @@ namespace Bunit
 	/// <summary>
 	/// A test context is a factory that makes it possible to create components under tests.
 	/// </summary>
-	public class TestContextBase : ITestContext, IRenderEventHandler, IDisposable
+	public class TestContextBase : ITestContext, IDisposable
 	{
 		private ITestRenderer? _testRenderer;
-
-		/// <inheritdoc/>
-		public event Action? OnAfterRender;
 
 		/// <inheritdoc/>
 		public ITestRenderer Renderer
@@ -26,7 +22,6 @@ namespace Bunit
 				if (_testRenderer is null)
 				{
 					_testRenderer = Services.GetRequiredService<ITestRenderer>();
-					_testRenderer.AddRenderEventHandler(this);
 				}
 				return _testRenderer;
 			}
@@ -47,14 +42,9 @@ namespace Bunit
 		/// <inheritdoc/>
 		public void Dispose()
 		{
-			_testRenderer?.RemoveRenderEventHandler(this);
+			// The service provider should dispose of any
+			// disposable object it has created, when it is disposed.
 			Services.Dispose();
-		}
-
-		Task IRenderEventHandler.Handle(RenderEvent renderEvent)
-		{
-			OnAfterRender?.Invoke();
-			return Task.CompletedTask;
 		}
 	}
 }

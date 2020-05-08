@@ -6,8 +6,8 @@ using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using Bunit.Extensions;
 using Microsoft.Extensions.Logging.Abstractions;
-using Bunit.Rendering.RenderEvents;
 using System.Collections.Concurrent;
 
 namespace Bunit.Rendering
@@ -28,9 +28,9 @@ namespace Bunit.Rendering
 		/// <summary>
 		/// Creates an instance of the <see cref="TestRenderer"/> class.
 		/// </summary>
-		public TestRenderer(IServiceProvider serviceProvider, ILoggerFactory loggerFactory) : base(serviceProvider, loggerFactory)
+		public TestRenderer(IServiceProvider services, ILoggerFactory loggerFactory) : base(services, loggerFactory)
 		{
-			_logger = loggerFactory?.CreateLogger<TestRenderer>() ?? NullLogger<TestRenderer>.Instance;
+			_logger = loggerFactory.CreateLogger<TestRenderer>();
 		}
 
 		/// <summary>
@@ -82,14 +82,6 @@ namespace Bunit.Rendering
 		public new ArrayRange<RenderTreeFrame> GetCurrentRenderTreeFrames(int componentId)
 		{
 			return base.GetCurrentRenderTreeFrames(componentId);
-			//try
-			//{
-			//}
-			//catch (ArgumentException ex) when (ex.Message.Equals($"The renderer does not have a component with ID {componentId}.", StringComparison.Ordinal))
-			//{
-			//	_logger.LogDebug(new EventId(2, nameof(GetCurrentRenderTreeFrames)), $"{ex.Message}");
-			//}
-			//return new ArrayRange<RenderTreeFrame>(Array.Empty<RenderTreeFrame>(), 0);
 		}
 
 		/// <inheritdoc/>
@@ -143,8 +135,7 @@ namespace Bunit.Rendering
 		}
 
 		/// <inheritdoc/>
-		protected override void HandleException(Exception exception)
-			=> _unhandledException = exception;
+		protected override void HandleException(Exception exception) => _unhandledException = exception;
 
 		/// <inheritdoc/>
 		protected override Task UpdateDisplayAsync(in RenderBatch renderBatch)
@@ -160,7 +151,8 @@ namespace Bunit.Rendering
 		{
 			var renderEvent = new RenderEvent(in renderBatch, this);
 
-			return _renderEventHandlers.Count switch{
+			return _renderEventHandlers.Count switch
+			{
 				0 => Task.CompletedTask,
 				1 => _renderEventHandlers[0].Handle(renderEvent),
 				_ => Task.WhenAll(_renderEventHandlers.Select(x => x.Handle(renderEvent)))

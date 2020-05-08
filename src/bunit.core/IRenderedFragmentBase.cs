@@ -1,7 +1,4 @@
 using System;
-using System.Threading.Tasks;
-using Bunit.Rendering;
-using Bunit.Rendering.RenderEvents;
 
 namespace Bunit
 {

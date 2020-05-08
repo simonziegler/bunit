@@ -1,5 +1,4 @@
 using Bunit.Rendering;
-using Bunit.Rendering.RenderEvents;
 using Bunit.TestAssets.SampleComponents;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;

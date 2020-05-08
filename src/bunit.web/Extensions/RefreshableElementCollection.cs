@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using AngleSharp.Dom;
-using Bunit.Rendering.RenderEvents;
 
 namespace Bunit
 {

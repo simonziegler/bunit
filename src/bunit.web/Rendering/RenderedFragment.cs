@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 using AngleSharp.Diffing.Core;
 using AngleSharp.Dom;
 using Bunit.Diffing;
+using Bunit.Extensions;
 using Bunit.Rendering;
-using Bunit.Rendering.RenderEvents;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
 
 namespace Bunit
 {
@@ -49,6 +48,8 @@ namespace Bunit
 		{
 			get
 			{
+				// The lock ensures that we cannot read the _markup and _latestRenderNodes
+				// field while it is being updated
 				lock (_lock)
 				{
 					return Volatile.Read(ref _markup);
@@ -61,6 +62,7 @@ namespace Bunit
 		{
 			get
 			{
+				// The lock ensures that latest nodes is always based on the latest rendered markup.
 				lock (_lock)
 				{
 					var result = Volatile.Read(ref _latestRenderNodes);
@@ -91,21 +93,15 @@ namespace Bunit
 			if (services is null)
 				throw new ArgumentNullException(nameof(services));
 
-			_logger = GetLogger(services);
-			Services = services;
+			_logger = services.CreateLogger<RenderedFragment>();
 			HtmlParser = services.GetRequiredService<HtmlParser>();
 			Renderer = services.GetRequiredService<ITestRenderer>();
+			Services = services;
 			ComponentId = componentId;
 			_markup = RetrieveLatestMarkupFromRenderer();
 			FirstRenderMarkup = _markup;
 			Renderer.AddRenderEventHandler(this);
 			RenderCount = 1;
-		}
-
-		private ILogger<RenderedFragment> GetLogger(IServiceProvider services)
-		{
-			var loggerFactory = services.GetService<ILoggerFactory>() ?? NullLoggerFactory.Instance;
-			return loggerFactory.CreateLogger<RenderedFragment>();
 		}
 
 		/// <inheritdoc/>
@@ -164,7 +160,7 @@ namespace Bunit
 
 		private void HandleChangesToMarkup(RenderEvent renderEvent)
 		{
-			if (renderEvent.HasChangesTo(ComponentId))
+			if (renderEvent.HasMarkupChanges(ComponentId))
 			{
 				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the markup of component {ComponentId} changed.");
 
@@ -177,7 +173,7 @@ namespace Bunit
 
 				OnMarkupUpdated?.Invoke();
 			}
-			else if (renderEvent.HasDiposedComponent(ComponentId))
+			else if (renderEvent.DidComponentDispose(ComponentId))
 			{
 				_logger.LogDebug(new EventId(1, nameof(HandleChangesToMarkup)), $"Received a new render where the component {ComponentId} was disposed.");
 				Renderer.RemoveRenderEventHandler(this);

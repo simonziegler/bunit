@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Components.RenderTree;
 
-namespace Bunit.Rendering.RenderEvents
+namespace Bunit.Rendering
 {
 	/// <summary>
 	/// Represents a render event from a <see cref="ITestRenderer"/>.
@@ -31,7 +31,7 @@ namespace Bunit.Rendering.RenderEvents
 		/// </summary>
 		/// <param name="componentId">Id of component to check for updates to.</param>
 		/// <returns>True if <see cref="RenderEvent"/> contains updates to component, false otherwise.</returns>
-		public bool HasChangesTo(int componentId)
+		public bool HasMarkupChanges(int componentId)
 		{
 			return HasChangesToRoot(componentId);
 
@@ -43,11 +43,6 @@ namespace Bunit.Rendering.RenderEvents
 					if (update.ComponentId == componentId && update.Edits.Count > 0)
 						return true;
 				}
-				//for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
-				//{
-				//	if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
-				//		return true;
-				//}
 
 				var renderFrames = _renderer.GetCurrentRenderTreeFrames(componentId);
 				return HasChangedToChildren(renderFrames);
@@ -67,18 +62,15 @@ namespace Bunit.Rendering.RenderEvents
 		}
 
 		/// <summary>
-		/// Checks whether the a component with <paramref name="componentId"/> or one or more of 
-		/// its sub components was changed during the <see cref="RenderEvent"/>.
+		/// Checks whether the a component with <paramref name="componentId"/> was disposed.
 		/// </summary>
-		/// <param name="componentId">Id of component to check for updates to.</param>
-		/// <returns>True if <see cref="RenderEvent"/> contains updates to component, false otherwise.</returns>
-		public bool HasDiposedComponent(int componentId)
+		/// <param name="componentId">Id of component to check.</param>
+		/// <returns>True if component was disposed, false otherwise.</returns>
+		public bool DidComponentDispose(int componentId)
 		{
 			for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
-			{
 				if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
 					return true;
-			}
 
 			return false;
 		}
@@ -101,9 +93,7 @@ namespace Bunit.Rendering.RenderEvents
 					if (update.ComponentId == componentId)
 						return true;
 				}
-				for (var i = 0; i < _renderBatch.DisposedEventHandlerIDs.Count; i++)
-					if (_renderBatch.DisposedEventHandlerIDs.Array[i].Equals(componentId))
-						return true;
+
 				return DidChildComponentRender(_renderer.GetCurrentRenderTreeFrames(componentId));
 			}
 

@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Bunit.Rendering.RenderEvents;
 
 namespace Bunit.Rendering
 {

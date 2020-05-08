@@ -1,25 +1,16 @@
 using System;
-using System.Threading;
-using System.Threading.Tasks;
-using AngleSharp.Dom;
-using Bunit.Mocking.JSInterop;
 using Bunit.TestAssets.SampleComponents;
-using Bunit.TestAssets.SampleComponents.Data;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.Extensions.DependencyInjection;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Bunit.Rendering
+namespace Bunit.Extensions.WaitForHelpers
 {
-	public class RenderWaitingHelperExtensionsTest : ComponentTestFixture
+	public class RenderedFragmentWaitForHelperExtensionsTest : TestContext
 	{
-		ITestOutputHelper _testOutput;
-		public RenderWaitingHelperExtensionsTest(ITestOutputHelper testOutput)
+		public RenderedFragmentWaitForHelperExtensionsTest(ITestOutputHelper testOutput)
 		{
 			Services.AddXunitLogger(testOutput);
-			_testOutput = testOutput;
 		}
 
 		[Fact(DisplayName = "WaitForAssertion can wait for multiple renders and changes to occur")]
@@ -42,43 +33,40 @@ namespace Bunit.Rendering
 			);
 		}
 
-		[Fact(DisplayName = "WaitForAssertion throws verification exception after timeout")]
+		[Fact(DisplayName = "WaitForAssertion throws exception after timeout")]
 		public void Test011()
 		{
-			const string expectedMessage = "The assertion did not pass within the timeout period.";
 			var cut = RenderComponent<Simple1>();
 
-			var expected = Should.Throw<WaitForAssertionFailedException>(() =>
+			var expected = Should.Throw<WaitForFailedException>(() =>
 			  cut.WaitForAssertion(() => cut.Markup.ShouldBeEmpty(), TimeSpan.FromMilliseconds(10))
 			);
 
-			expected.Message.ShouldBe(expectedMessage);
+			expected.Message.ShouldBe(WaitForAssertionHelper.TIMEOUT_MESSAGE);
 			expected.InnerException.ShouldBeOfType<ShouldAssertException>();
 		}
 
-		[Fact(DisplayName = "WaitForState throws WaitForRenderFailedException exception after timeout")]
+		[Fact(DisplayName = "WaitForState throws exception after timeout")]
 		public void Test012()
 		{
-			const string expectedMessage = "The state predicate did not pass before the timeout period passed.";
 			var cut = RenderComponent<Simple1>();
 
-			var expected = Should.Throw<WaitForStateFailedException>(() =>
+			var expected = Should.Throw<WaitForFailedException>(() =>
 				cut.WaitForState(() => string.IsNullOrEmpty(cut.Markup), TimeSpan.FromMilliseconds(100))
 			);
 
-			expected.Message.ShouldBe(expectedMessage);
+			expected.Message.ShouldBe(WaitForStateHelper.TIMEOUT_BEFORE_PASS);
 		}
 
-		[Fact(DisplayName = "WaitForState throws WaitForStateFailedException exception if statePredicate throws on a later render")]
+		[Fact(DisplayName = "WaitForState throws exception if statePredicate throws on a later render")]
 		public void Test013()
 		{
-			const string expectedMessage = "The state predicate did not pass before the timeout period passed.";
 			const string expectedInnerMessage = "INNER MESSAGE";
 			var cut = RenderComponent<TwoRendersTwoChanges>();
 			cut.Find("#tick").Click();
 			cut.Find("#tock").Click();
 
-			var expected = Should.Throw<WaitForStateFailedException>(() =>
+			var expected = Should.Throw<WaitForFailedException>(() =>
 				cut.WaitForState(() =>
 				{
 					if (cut.Find("#state").TextContent == "Stopped")
@@ -87,7 +75,7 @@ namespace Bunit.Rendering
 				})
 			);
 
-			expected.Message.ShouldBe(expectedMessage);
+			expected.Message.ShouldBe(WaitForStateHelper.EXCEPTION_IN_PREDICATE);
 			expected.InnerException.ShouldBeOfType<InvalidOperationException>()
 				.Message.ShouldBe(expectedInnerMessage);
 		}

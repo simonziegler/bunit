@@ -1,7 +1,6 @@
 using System;
 using AngleSharp.Dom;
 using AngleSharpWrappers;
-using Bunit.Rendering.RenderEvents;
 
 namespace Bunit
 {
