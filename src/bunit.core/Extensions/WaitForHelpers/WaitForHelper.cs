@@ -37,9 +37,8 @@ namespace Bunit.Extensions.WaitForHelpers
 		protected abstract bool StopWaitingOnCheckException { get; }
 
 		/// <summary>
-		/// Gets the task that will complete successfully if the assertion passed before the timeout was reached.
-		/// The task will complete with an <see cref="WaitForAssertionFailedException"/> exception if the timeout was reached without the assertion passing,
-		/// and will have the assertion exception as its InnerException.
+		/// Gets the task that will complete successfully if the check passed before the timeout was reached.
+		/// The task will complete with an <see cref="WaitForFailedException"/> exception if the timeout was reached without the check passing.
 		/// </summary>
 		public Task WaitTask => _completionSouce.Task;
 
